@@ -10,15 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
 import com.itigeeks.restaurant.business.facade.RestaurantFacade;
-import com.itigeeks.restaurant.view.Test2Controller;
 import com.itigeeks.restaurant.view.LoginController;
-import com.itigeeks.restaurant.view.utils.SpringFxmlLoader;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
