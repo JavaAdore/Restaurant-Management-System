@@ -7,16 +7,27 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
+
 
 /**
  * Persistent class for entity stored in table "res_order_replica"
@@ -77,25 +88,25 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     private Date       lastUpdate   ;
 
     @Column(name="tax", nullable=false)
-    private BigDecimal tax          ;
+    private Integer tax          ;
 
     @Column(name="service_charge", nullable=false)
-    private BigDecimal serviceCharge ;
+    private Integer serviceCharge ;
 
     @Column(name="gratuity", nullable=false)
-    private BigDecimal gratuity     ;
+    private Integer gratuity     ;
 
     @Column(name="gratuity_settings", nullable=false)
-    private BigDecimal gratuitySettings ;
+    private Integer gratuitySettings ;
 
     @Column(name="gratuity_is_flat", nullable=false)
     private Boolean    gratuityIsFlat ;
 
     @Column(name="sub_total", nullable=false)
-    private BigDecimal subTotal     ;
+    private Integer subTotal     ;
 
     @Column(name="total", nullable=false)
-    private BigDecimal total        ;
+    private Integer total        ;
 
     @Column(name="is_print_que", nullable=false)
     private Boolean    isPrintQue   ;
@@ -110,13 +121,13 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     private String     duplicateOrderChildIds ;
 
     @Column(name="discount", nullable=false)
-    private BigDecimal discount     ;
+    private Integer discount     ;
 
     @Column(name="is_send_sms", nullable=false)
     private Boolean    isSendSms    ;
 
     @Column(name="total_paid")
-    private BigDecimal totalPaid    ;
+    private Integer totalPaid    ;
 
     @Column(name="comments", length=500)
     private String     comments     ;
@@ -128,7 +139,7 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     private Boolean    isNew        ;
 
     @Column(name="delivery_charge", nullable=false)
-    private BigDecimal deliveryCharge ;
+    private Integer deliveryCharge ;
 
 	// "tableId" (column "table_id") is not defined by itself because used as FK in a link 
 	// "localWebActionId" (column "local_web_action_id") is not defined by itself because used as FK in a link 
@@ -293,41 +304,41 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : tax ( DECIMAL ) 
-    public void setTax( BigDecimal tax )
+    public void setTax( Integer tax )
     {
         this.tax = tax;
     }
-    public BigDecimal getTax()
+    public Integer getTax()
     {
         return this.tax;
     }
 
     //--- DATABASE MAPPING : service_charge ( DECIMAL ) 
-    public void setServiceCharge( BigDecimal serviceCharge )
+    public void setServiceCharge( Integer serviceCharge )
     {
         this.serviceCharge = serviceCharge;
     }
-    public BigDecimal getServiceCharge()
+    public Integer getServiceCharge()
     {
         return this.serviceCharge;
     }
 
     //--- DATABASE MAPPING : gratuity ( DECIMAL ) 
-    public void setGratuity( BigDecimal gratuity )
+    public void setGratuity( Integer gratuity )
     {
         this.gratuity = gratuity;
     }
-    public BigDecimal getGratuity()
+    public Integer getGratuity()
     {
         return this.gratuity;
     }
 
     //--- DATABASE MAPPING : gratuity_settings ( DECIMAL ) 
-    public void setGratuitySettings( BigDecimal gratuitySettings )
+    public void setGratuitySettings( Integer gratuitySettings )
     {
         this.gratuitySettings = gratuitySettings;
     }
-    public BigDecimal getGratuitySettings()
+    public Integer getGratuitySettings()
     {
         return this.gratuitySettings;
     }
@@ -343,21 +354,21 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : sub_total ( DECIMAL ) 
-    public void setSubTotal( BigDecimal subTotal )
+    public void setSubTotal( Integer subTotal )
     {
         this.subTotal = subTotal;
     }
-    public BigDecimal getSubTotal()
+    public Integer getSubTotal()
     {
         return this.subTotal;
     }
 
     //--- DATABASE MAPPING : total ( DECIMAL ) 
-    public void setTotal( BigDecimal total )
+    public void setTotal( Integer total )
     {
         this.total = total;
     }
-    public BigDecimal getTotal()
+    public Integer getTotal()
     {
         return this.total;
     }
@@ -403,11 +414,11 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : discount ( DECIMAL ) 
-    public void setDiscount( BigDecimal discount )
+    public void setDiscount( Integer discount )
     {
         this.discount = discount;
     }
-    public BigDecimal getDiscount()
+    public Integer getDiscount()
     {
         return this.discount;
     }
@@ -423,11 +434,11 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : total_paid ( DECIMAL ) 
-    public void setTotalPaid( BigDecimal totalPaid )
+    public void setTotalPaid( Integer totalPaid )
     {
         this.totalPaid = totalPaid;
     }
-    public BigDecimal getTotalPaid()
+    public Integer getTotalPaid()
     {
         return this.totalPaid;
     }
@@ -463,11 +474,11 @@ public class ResOrderReplica extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : delivery_charge ( DECIMAL ) 
-    public void setDeliveryCharge( BigDecimal deliveryCharge )
+    public void setDeliveryCharge( Integer deliveryCharge )
     {
         this.deliveryCharge = deliveryCharge;
     }
-    public BigDecimal getDeliveryCharge()
+    public Integer getDeliveryCharge()
     {
         return this.deliveryCharge;
     }

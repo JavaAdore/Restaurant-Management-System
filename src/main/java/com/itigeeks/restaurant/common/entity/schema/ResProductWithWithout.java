@@ -7,14 +7,22 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_product_with_without"
@@ -52,7 +60,7 @@ public class ResProductWithWithout extends AbstractEntity implements Serializabl
     private String     description  ;
 
     @Column(name="price")
-    private BigDecimal price        ;
+    private Integer price        ;
 
     @Column(name="quantity", nullable=false)
     private Short      quantity     ;
@@ -127,11 +135,11 @@ public class ResProductWithWithout extends AbstractEntity implements Serializabl
     }
 
     //--- DATABASE MAPPING : price ( DECIMAL ) 
-    public void setPrice( BigDecimal price )
+    public void setPrice( Integer price )
     {
         this.price = price;
     }
-    public BigDecimal getPrice()
+    public Integer getPrice()
     {
         return this.price;
     }

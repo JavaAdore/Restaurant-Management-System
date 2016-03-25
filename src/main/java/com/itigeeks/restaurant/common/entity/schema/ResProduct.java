@@ -7,16 +7,27 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
+
 
 /**
  * Persistent class for entity stored in table "res_product"
@@ -57,19 +68,19 @@ public class ResProduct extends AbstractEntity implements Serializable
     private String     description  ;
 
     @Column(name="price", nullable=false)
-    private BigDecimal price        ;
+    private Integer price        ;
 
     @Column(name="takeaway_price")
-    private BigDecimal takeawayPrice ;
+    private Integer takeawayPrice ;
 
     @Column(name="web_order_price")
-    private BigDecimal webOrderPrice ;
+    private Integer webOrderPrice ;
 
     @Column(name="delivery_price")
-    private BigDecimal deliveryPrice ;
+    private Integer deliveryPrice ;
 
     @Column(name="waiting_price", nullable=false)
-    private BigDecimal waitingPrice ;
+    private Integer waitingPrice ;
 
     @Column(name="is_favourite", nullable=false)
     private Boolean    isFavourite  ;
@@ -97,10 +108,10 @@ public class ResProduct extends AbstractEntity implements Serializable
     private Boolean    isStockControlled ;
 
     @Column(name="quantity")
-    private BigDecimal quantity     ;
+    private Integer quantity     ;
 
     @Column(name="stock")
-    private BigDecimal stock        ;
+    private Integer stock        ;
 
 	// "parentId" (column "parent_id") is not defined by itself because used as FK in a link 
 	// "categoryId" (column "category_id") is not defined by itself because used as FK in a link 
@@ -240,51 +251,51 @@ public class ResProduct extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : price ( DECIMAL ) 
-    public void setPrice( BigDecimal price )
+    public void setPrice( Integer price )
     {
         this.price = price;
     }
-    public BigDecimal getPrice()
+    public Integer getPrice()
     {
         return this.price;
     }
 
     //--- DATABASE MAPPING : takeaway_price ( DECIMAL ) 
-    public void setTakeawayPrice( BigDecimal takeawayPrice )
+    public void setTakeawayPrice( Integer takeawayPrice )
     {
         this.takeawayPrice = takeawayPrice;
     }
-    public BigDecimal getTakeawayPrice()
+    public Integer getTakeawayPrice()
     {
         return this.takeawayPrice;
     }
 
     //--- DATABASE MAPPING : web_order_price ( DECIMAL ) 
-    public void setWebOrderPrice( BigDecimal webOrderPrice )
+    public void setWebOrderPrice( Integer webOrderPrice )
     {
         this.webOrderPrice = webOrderPrice;
     }
-    public BigDecimal getWebOrderPrice()
+    public Integer getWebOrderPrice()
     {
         return this.webOrderPrice;
     }
 
     //--- DATABASE MAPPING : delivery_price ( DECIMAL ) 
-    public void setDeliveryPrice( BigDecimal deliveryPrice )
+    public void setDeliveryPrice( Integer deliveryPrice )
     {
         this.deliveryPrice = deliveryPrice;
     }
-    public BigDecimal getDeliveryPrice()
+    public Integer getDeliveryPrice()
     {
         return this.deliveryPrice;
     }
 
     //--- DATABASE MAPPING : waiting_price ( DECIMAL ) 
-    public void setWaitingPrice( BigDecimal waitingPrice )
+    public void setWaitingPrice( Integer waitingPrice )
     {
         this.waitingPrice = waitingPrice;
     }
-    public BigDecimal getWaitingPrice()
+    public Integer getWaitingPrice()
     {
         return this.waitingPrice;
     }
@@ -370,21 +381,21 @@ public class ResProduct extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : quantity ( DECIMAL ) 
-    public void setQuantity( BigDecimal quantity )
+    public void setQuantity( Integer quantity )
     {
         this.quantity = quantity;
     }
-    public BigDecimal getQuantity()
+    public Integer getQuantity()
     {
         return this.quantity;
     }
 
     //--- DATABASE MAPPING : stock ( DECIMAL ) 
-    public void setStock( BigDecimal stock )
+    public void setStock( Integer stock )
     {
         this.stock = stock;
     }
-    public BigDecimal getStock()
+    public Integer getStock()
     {
         return this.stock;
     }

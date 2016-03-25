@@ -9,10 +9,9 @@ import org.springframework.stereotype.Controller;
 import com.itigeeks.restaurant.business.facade.RestaurantFacade;
 import com.itigeeks.restaurant.common.dto.PagingDetailsHolder;
 import com.itigeeks.restaurant.common.entity.schema.ResUser;
-import com.itigeeks.restaurant.common.enums.PagingDirections;
+import com.itigeeks.restaurant.common.enums.PagingDirection;
 import com.itigeeks.restaurant.common.utils.Utils;
 import com.itigeeks.restaurant.view.LoginUserComponent;
-import com.mysql.jdbc.log.Log;
 
 @Controller
 public class ComponentFactory {
@@ -21,7 +20,7 @@ public class ComponentFactory {
 	private RestaurantFacade restaurantFacade;
 
 	public List<LoginUserComponent> createLoginUsers(
-			PagingDetailsHolder pagingDetailsHolder, PagingDirections direction) {
+			PagingDetailsHolder pagingDetailsHolder, PagingDirection direction) {
 
 		int countOfAllUsers = restaurantFacade.getCountOfAllUsers();
 		

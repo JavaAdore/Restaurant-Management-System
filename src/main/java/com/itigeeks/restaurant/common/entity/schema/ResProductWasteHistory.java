@@ -7,15 +7,25 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_product_waste_history"
@@ -51,7 +61,7 @@ public class ResProductWasteHistory extends AbstractEntity implements Serializab
     private Date       wasteDate    ;
 
     @Column(name="quantity")
-    private BigDecimal quantity     ;
+    private Integer quantity     ;
 
 	// "productId" (column "product_id") is not defined by itself because used as FK in a link 
 	// "lastUpdatedBy" (column "last_updated_by") is not defined by itself because used as FK in a link 
@@ -103,11 +113,11 @@ public class ResProductWasteHistory extends AbstractEntity implements Serializab
     }
 
     //--- DATABASE MAPPING : quantity ( DECIMAL ) 
-    public void setQuantity( BigDecimal quantity )
+    public void setQuantity( Integer quantity )
     {
         this.quantity = quantity;
     }
-    public BigDecimal getQuantity()
+    public Integer getQuantity()
     {
         return this.quantity;
     }

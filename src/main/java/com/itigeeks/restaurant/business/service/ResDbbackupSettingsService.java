@@ -33,13 +33,36 @@ public interface ResDbbackupSettingsService {
 	public List<ResDbbackupSettings> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResDbbackupSettings> search( Map<String, Object> criteria ) ;
+	public List<ResDbbackupSettings> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResDbbackupSettings> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResDbbackupSettings> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDbbackupSettings> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDbbackupSettings> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDbbackupSettings> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResDbbackupSettings> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResDbbackupSettings> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDbbackupSettings> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDbbackupSettings> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

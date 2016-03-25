@@ -7,14 +7,21 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
-
 import java.util.List;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_promo"

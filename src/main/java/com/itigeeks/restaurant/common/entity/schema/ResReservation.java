@@ -7,16 +7,27 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
+
 
 /**
  * Persistent class for entity stored in table "res_reservation"
@@ -68,7 +79,7 @@ public class ResReservation extends AbstractEntity implements Serializable
     private String     specialInstruction ;
 
     @Column(name="deposit_amount", nullable=false)
-    private BigDecimal depositAmount ;
+    private Integer depositAmount ;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="reservation_date", nullable=false)
@@ -202,11 +213,11 @@ public class ResReservation extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : deposit_amount ( DECIMAL ) 
-    public void setDepositAmount( BigDecimal depositAmount )
+    public void setDepositAmount( Integer depositAmount )
     {
         this.depositAmount = depositAmount;
     }
-    public BigDecimal getDepositAmount()
+    public Integer getDepositAmount()
     {
         return this.depositAmount;
     }

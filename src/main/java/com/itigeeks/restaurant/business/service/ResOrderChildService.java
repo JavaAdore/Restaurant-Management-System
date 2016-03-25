@@ -33,13 +33,36 @@ public interface ResOrderChildService {
 	public List<ResOrderChild> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResOrderChild> search( Map<String, Object> criteria ) ;
+	public List<ResOrderChild> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResOrderChild> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResOrderChild> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResOrderChild> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResOrderChild> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResOrderChild> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResOrderChild> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResOrderChild> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResOrderChild> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResOrderChild> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

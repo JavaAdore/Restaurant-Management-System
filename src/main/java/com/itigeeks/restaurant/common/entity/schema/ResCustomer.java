@@ -7,16 +7,27 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.annotation.DisplayOrder;
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
 
 /**
  * Persistent class for entity stored in table "res_customer"
@@ -51,14 +62,15 @@ public class ResCustomer extends AbstractEntity implements Serializable
     private String     customerKey  ;
 
     @Column(name="available_credit", nullable=false)
-    private BigDecimal availableCredit ;
-
+    private Integer availableCredit ;
+    
+    @DisplayOrder
     @Column(name="customer_name", nullable=false, length=50)
     private String     customerName ;
 
     @Column(name="house_no", length=150)
     private String     houseNo      ;
-
+    
     @Column(name="house_name", length=150)
     private String     houseName    ;
 
@@ -67,10 +79,10 @@ public class ResCustomer extends AbstractEntity implements Serializable
 
     @Column(name="post_code", length=150)
     private String     postCode     ;
-
+    @DisplayOrder
     @Column(name="email", length=50)
     private String     email        ;
-
+    @DisplayOrder
     @Column(name="mobile", length=50)
     private String     mobile       ;
 
@@ -195,11 +207,11 @@ public class ResCustomer extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : available_credit ( DECIMAL ) 
-    public void setAvailableCredit( BigDecimal availableCredit )
+    public void setAvailableCredit( Integer availableCredit )
     {
         this.availableCredit = availableCredit;
     }
-    public BigDecimal getAvailableCredit()
+    public Integer getAvailableCredit()
     {
         return this.availableCredit;
     }

@@ -7,14 +7,22 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_quantity_type_conversion"
@@ -46,7 +54,7 @@ public class ResQuantityTypeConversion extends AbstractEntity implements Seriali
     // ENTITY DATA FIELDS 
     //----------------------------------------------------------------------    
     @Column(name="conversion_rate", nullable=false)
-    private BigDecimal conversionRate ;
+    private Integer conversionRate ;
 
 	// "fromTypeId" (column "from_type_id") is not defined by itself because used as FK in a link 
 	// "toTypeId" (column "to_type_id") is not defined by itself because used as FK in a link 
@@ -88,11 +96,11 @@ public class ResQuantityTypeConversion extends AbstractEntity implements Seriali
     // GETTERS & SETTERS FOR FIELDS
     //----------------------------------------------------------------------
     //--- DATABASE MAPPING : conversion_rate ( DECIMAL ) 
-    public void setConversionRate( BigDecimal conversionRate )
+    public void setConversionRate( Integer conversionRate )
     {
         this.conversionRate = conversionRate;
     }
-    public BigDecimal getConversionRate()
+    public Integer getConversionRate()
     {
         return this.conversionRate;
     }

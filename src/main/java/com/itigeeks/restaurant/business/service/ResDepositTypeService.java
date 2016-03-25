@@ -33,13 +33,36 @@ public interface ResDepositTypeService {
 	public List<ResDepositType> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResDepositType> search( Map<String, Object> criteria ) ;
+	public List<ResDepositType> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResDepositType> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResDepositType> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDepositType> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDepositType> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDepositType> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResDepositType> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResDepositType> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDepositType> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDepositType> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

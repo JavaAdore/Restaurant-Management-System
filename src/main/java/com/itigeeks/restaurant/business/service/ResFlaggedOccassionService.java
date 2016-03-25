@@ -33,13 +33,36 @@ public interface ResFlaggedOccassionService {
 	public List<ResFlaggedOccassion> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResFlaggedOccassion> search( Map<String, Object> criteria ) ;
+	public List<ResFlaggedOccassion> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResFlaggedOccassion> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResFlaggedOccassion> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResFlaggedOccassion> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResFlaggedOccassion> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResFlaggedOccassion> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResFlaggedOccassion> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResFlaggedOccassion> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResFlaggedOccassion> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResFlaggedOccassion> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

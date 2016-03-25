@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.itigeeks.restaurant.common.entity.schema.ResDiscountProduct;
+import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 import com.itigeeks.restaurant.dataaccess.dao.ResDiscountProductDAO;
 
 /**
@@ -57,10 +58,6 @@ public class ResDiscountProductDAOImpl extends AbstractDAO implements ResDiscoun
 	}
 	
 	
-	public List<ResDiscountProduct> search( Map<String, Object> criteria )
-	{
-		return super.search( ResDiscountProduct.class  , criteria);
-	}
 
 	
 	public Integer countAll()
@@ -68,14 +65,61 @@ public class ResDiscountProductDAOImpl extends AbstractDAO implements ResDiscoun
 		return super.countAll(ResDiscountProduct.class);
 	}
 
-	public List<ResDiscountProduct> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
-	{
-		return super.search( ResDiscountProduct.class , criteria ,  firstPage ,  pageSize ); 
-	}
+	
 
 	public List<ResDiscountProduct> loadAll(Integer startPage , Integer pageSize )
 	{
 		return super.loadAll( ResDiscountProduct.class , startPage , pageSize);
 	}
+	
+	
+	
+	
+
+	@Override
+	public List<ResDiscountProduct> load(Map<String, Object> criteria) {
+		return this.load(criteria , QueryConjunctionType.AND);
+	}
+
+	@Override
+	public List<ResDiscountProduct> load(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+			
+			return (List<ResDiscountProduct>) super.load(ResDiscountProduct.class , criteria ,  conjuncationType );
+	}
+
+	@Override
+	public List<ResDiscountProduct> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,QueryConjunctionType conjuncationType) {
+		
+		return this.load( criteria,  startPage,  pageSize,null , null, conjuncationType);
+	}
+	
+
+	@Override
+	public List<ResDiscountProduct> load(Map<String, Object> criteria, Integer startPage,Integer pageSize) {
+			
+		return this.load( criteria,  startPage,  pageSize,null , null, QueryConjunctionType.AND);
+
+	}
+
+	@Override
+	public List<ResDiscountProduct> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,String sortField, Boolean ascending,QueryConjunctionType conjuncationType) {
+			
+		return (List<ResDiscountProduct>) super.load(ResDiscountProduct.class , criteria , startPage , pageSize ,  sortField , ascending ,  conjuncationType );
+	}
+
+	
+	@Override
+	public Integer getCount(Map<String, Object> criteria) {
+			return this.getCount(criteria ,QueryConjunctionType.AND );
+	}
+
+	@Override
+	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+		return super.getCount(ResDiscountProduct.class  , criteria ,conjuncationType) ;
+	}
+			
+
+
+	
 
 }

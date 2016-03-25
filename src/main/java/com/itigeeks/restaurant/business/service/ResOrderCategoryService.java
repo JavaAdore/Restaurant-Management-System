@@ -33,13 +33,36 @@ public interface ResOrderCategoryService {
 	public List<ResOrderCategory> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResOrderCategory> search( Map<String, Object> criteria ) ;
+	public List<ResOrderCategory> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResOrderCategory> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResOrderCategory> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResOrderCategory> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResOrderCategory> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResOrderCategory> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResOrderCategory> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResOrderCategory> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResOrderCategory> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResOrderCategory> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

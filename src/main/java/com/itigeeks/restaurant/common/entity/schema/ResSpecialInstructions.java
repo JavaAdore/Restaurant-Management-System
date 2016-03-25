@@ -7,14 +7,22 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_special_instructions"
@@ -49,7 +57,7 @@ public class ResSpecialInstructions extends AbstractEntity implements Serializab
     private String     instruction  ;
 
     @Column(name="price", nullable=false)
-    private BigDecimal price        ;
+    private Integer price        ;
 
 	// "orderChildId" (column "order_child_id") is not defined by itself because used as FK in a link 
 
@@ -96,11 +104,11 @@ public class ResSpecialInstructions extends AbstractEntity implements Serializab
     }
 
     //--- DATABASE MAPPING : price ( DECIMAL ) 
-    public void setPrice( BigDecimal price )
+    public void setPrice( Integer price )
     {
         this.price = price;
     }
-    public BigDecimal getPrice()
+    public Integer getPrice()
     {
         return this.price;
     }

@@ -33,13 +33,36 @@ public interface ResTableTransactionsService {
 	public List<ResTableTransactions> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResTableTransactions> search( Map<String, Object> criteria ) ;
+	public List<ResTableTransactions> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResTableTransactions> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResTableTransactions> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResTableTransactions> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResTableTransactions> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResTableTransactions> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResTableTransactions> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResTableTransactions> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResTableTransactions> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResTableTransactions> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

@@ -7,16 +7,27 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
+
 
 /**
  * Persistent class for entity stored in table "res_ingredient"
@@ -51,10 +62,10 @@ public class ResIngredient extends AbstractEntity implements Serializable
     private String     ingredientName ;
 
     @Column(name="price")
-    private BigDecimal price        ;
+    private Integer price        ;
 
     @Column(name="price_without")
-    private BigDecimal priceWithout ;
+    private Integer priceWithout ;
 
     @Column(name="is_active", nullable=false)
     private Boolean    isActive     ;
@@ -117,21 +128,21 @@ public class ResIngredient extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : price ( DECIMAL ) 
-    public void setPrice( BigDecimal price )
+    public void setPrice( Integer price )
     {
         this.price = price;
     }
-    public BigDecimal getPrice()
+    public Integer getPrice()
     {
         return this.price;
     }
 
     //--- DATABASE MAPPING : price_without ( DECIMAL ) 
-    public void setPriceWithout( BigDecimal priceWithout )
+    public void setPriceWithout( Integer priceWithout )
     {
         this.priceWithout = priceWithout;
     }
-    public BigDecimal getPriceWithout()
+    public Integer getPriceWithout()
     {
         return this.priceWithout;
     }

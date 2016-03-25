@@ -33,13 +33,36 @@ public interface ResReservationStatusService {
 	public List<ResReservationStatus> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResReservationStatus> search( Map<String, Object> criteria ) ;
+	public List<ResReservationStatus> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResReservationStatus> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResReservationStatus> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResReservationStatus> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResReservationStatus> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResReservationStatus> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResReservationStatus> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResReservationStatus> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResReservationStatus> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResReservationStatus> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

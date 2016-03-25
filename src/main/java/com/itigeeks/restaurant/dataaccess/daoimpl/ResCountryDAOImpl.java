@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.itigeeks.restaurant.common.entity.schema.ResCountry;
+import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 import com.itigeeks.restaurant.dataaccess.dao.ResCountryDAO;
 
 /**
@@ -57,10 +58,6 @@ public class ResCountryDAOImpl extends AbstractDAO implements ResCountryDAO  , S
 	}
 	
 	
-	public List<ResCountry> search( Map<String, Object> criteria )
-	{
-		return super.search( ResCountry.class  , criteria);
-	}
 
 	
 	public Integer countAll()
@@ -68,14 +65,61 @@ public class ResCountryDAOImpl extends AbstractDAO implements ResCountryDAO  , S
 		return super.countAll(ResCountry.class);
 	}
 
-	public List<ResCountry> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
-	{
-		return super.search( ResCountry.class , criteria ,  firstPage ,  pageSize ); 
-	}
+	
 
 	public List<ResCountry> loadAll(Integer startPage , Integer pageSize )
 	{
 		return super.loadAll( ResCountry.class , startPage , pageSize);
 	}
+	
+	
+	
+	
+
+	@Override
+	public List<ResCountry> load(Map<String, Object> criteria) {
+		return this.load(criteria , QueryConjunctionType.AND);
+	}
+
+	@Override
+	public List<ResCountry> load(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+			
+			return (List<ResCountry>) super.load(ResCountry.class , criteria ,  conjuncationType );
+	}
+
+	@Override
+	public List<ResCountry> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,QueryConjunctionType conjuncationType) {
+		
+		return this.load( criteria,  startPage,  pageSize,null , null, conjuncationType);
+	}
+	
+
+	@Override
+	public List<ResCountry> load(Map<String, Object> criteria, Integer startPage,Integer pageSize) {
+			
+		return this.load( criteria,  startPage,  pageSize,null , null, QueryConjunctionType.AND);
+
+	}
+
+	@Override
+	public List<ResCountry> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,String sortField, Boolean ascending,QueryConjunctionType conjuncationType) {
+			
+		return (List<ResCountry>) super.load(ResCountry.class , criteria , startPage , pageSize ,  sortField , ascending ,  conjuncationType );
+	}
+
+	
+	@Override
+	public Integer getCount(Map<String, Object> criteria) {
+			return this.getCount(criteria ,QueryConjunctionType.AND );
+	}
+
+	@Override
+	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+		return super.getCount(ResCountry.class  , criteria ,conjuncationType) ;
+	}
+			
+
+
+	
 
 }

@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.itigeeks.restaurant.common.entity.schema.ResDepositType;
+import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 import com.itigeeks.restaurant.dataaccess.dao.ResDepositTypeDAO;
 
 /**
@@ -57,10 +58,6 @@ public class ResDepositTypeDAOImpl extends AbstractDAO implements ResDepositType
 	}
 	
 	
-	public List<ResDepositType> search( Map<String, Object> criteria )
-	{
-		return super.search( ResDepositType.class  , criteria);
-	}
 
 	
 	public Integer countAll()
@@ -68,14 +65,61 @@ public class ResDepositTypeDAOImpl extends AbstractDAO implements ResDepositType
 		return super.countAll(ResDepositType.class);
 	}
 
-	public List<ResDepositType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
-	{
-		return super.search( ResDepositType.class , criteria ,  firstPage ,  pageSize ); 
-	}
+	
 
 	public List<ResDepositType> loadAll(Integer startPage , Integer pageSize )
 	{
 		return super.loadAll( ResDepositType.class , startPage , pageSize);
 	}
+	
+	
+	
+	
+
+	@Override
+	public List<ResDepositType> load(Map<String, Object> criteria) {
+		return this.load(criteria , QueryConjunctionType.AND);
+	}
+
+	@Override
+	public List<ResDepositType> load(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+			
+			return (List<ResDepositType>) super.load(ResDepositType.class , criteria ,  conjuncationType );
+	}
+
+	@Override
+	public List<ResDepositType> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,QueryConjunctionType conjuncationType) {
+		
+		return this.load( criteria,  startPage,  pageSize,null , null, conjuncationType);
+	}
+	
+
+	@Override
+	public List<ResDepositType> load(Map<String, Object> criteria, Integer startPage,Integer pageSize) {
+			
+		return this.load( criteria,  startPage,  pageSize,null , null, QueryConjunctionType.AND);
+
+	}
+
+	@Override
+	public List<ResDepositType> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,String sortField, Boolean ascending,QueryConjunctionType conjuncationType) {
+			
+		return (List<ResDepositType>) super.load(ResDepositType.class , criteria , startPage , pageSize ,  sortField , ascending ,  conjuncationType );
+	}
+
+	
+	@Override
+	public Integer getCount(Map<String, Object> criteria) {
+			return this.getCount(criteria ,QueryConjunctionType.AND );
+	}
+
+	@Override
+	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+		return super.getCount(ResDepositType.class  , criteria ,conjuncationType) ;
+	}
+			
+
+
+	
 
 }

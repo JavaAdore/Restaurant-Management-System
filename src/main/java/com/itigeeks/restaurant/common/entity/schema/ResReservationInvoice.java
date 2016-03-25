@@ -7,15 +7,25 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_reservation_invoice"
@@ -51,16 +61,16 @@ public class ResReservationInvoice extends AbstractEntity implements Serializabl
     private Date       invoiceDate  ;
 
     @Column(name="bill_amount", nullable=false)
-    private BigDecimal billAmount   ;
+    private Integer billAmount   ;
 
     @Column(name="delivery_charge")
-    private BigDecimal deliveryCharge ;
+    private Integer deliveryCharge ;
 
     @Column(name="tax")
-    private BigDecimal tax          ;
+    private Integer tax          ;
 
     @Column(name="total_amount", nullable=false)
-    private BigDecimal totalAmount  ;
+    private Integer totalAmount  ;
 
     @Column(name="notes", length=250)
     private String     notes        ;
@@ -127,41 +137,41 @@ public class ResReservationInvoice extends AbstractEntity implements Serializabl
     }
 
     //--- DATABASE MAPPING : bill_amount ( DECIMAL ) 
-    public void setBillAmount( BigDecimal billAmount )
+    public void setBillAmount( Integer billAmount )
     {
         this.billAmount = billAmount;
     }
-    public BigDecimal getBillAmount()
+    public Integer getBillAmount()
     {
         return this.billAmount;
     }
 
     //--- DATABASE MAPPING : delivery_charge ( DECIMAL ) 
-    public void setDeliveryCharge( BigDecimal deliveryCharge )
+    public void setDeliveryCharge( Integer deliveryCharge )
     {
         this.deliveryCharge = deliveryCharge;
     }
-    public BigDecimal getDeliveryCharge()
+    public Integer getDeliveryCharge()
     {
         return this.deliveryCharge;
     }
 
     //--- DATABASE MAPPING : tax ( DECIMAL ) 
-    public void setTax( BigDecimal tax )
+    public void setTax( Integer tax )
     {
         this.tax = tax;
     }
-    public BigDecimal getTax()
+    public Integer getTax()
     {
         return this.tax;
     }
 
     //--- DATABASE MAPPING : total_amount ( DECIMAL ) 
-    public void setTotalAmount( BigDecimal totalAmount )
+    public void setTotalAmount( Integer totalAmount )
     {
         this.totalAmount = totalAmount;
     }
-    public BigDecimal getTotalAmount()
+    public Integer getTotalAmount()
     {
         return this.totalAmount;
     }

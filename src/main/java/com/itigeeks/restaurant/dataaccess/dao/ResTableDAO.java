@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.itigeeks.restaurant.common.entity.schema.ResTable;
+import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
  *
@@ -23,23 +24,32 @@ public interface ResTableDAO {
 
 	public ResTable load(Long id ) ;
 
-	
 	public List<ResTable> loadAll() ;
-
+	
+	public List<ResTable> loadAll(Integer startPage , Integer pageSize ) ;
 
 	public List<ResTable> loadByNamedQuery(String queryName) ;
-
 	
 	public List<ResTable> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
+	public List<ResTable> load( Map<String, Object> criteria ) ;
 	
-	public List<ResTable> search( Map<String, Object> criteria ) ;
+	public List<ResTable> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
 
+	public List<ResTable> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+	
+	public List<ResTable> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+
+	public List<ResTable> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
+		
 	
 	public Integer countAll();
+
+	public Integer getCount(Map<String, Object> criteria);
+			
+	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
 	
-	public List<ResTable> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
 
-	public List<ResTable> loadAll(Integer startPage , Integer pageSize ) ;
 
+	
 }

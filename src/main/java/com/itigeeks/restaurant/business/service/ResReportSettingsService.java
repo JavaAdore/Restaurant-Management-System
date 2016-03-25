@@ -33,13 +33,36 @@ public interface ResReportSettingsService {
 	public List<ResReportSettings> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResReportSettings> search( Map<String, Object> criteria ) ;
+	public List<ResReportSettings> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResReportSettings> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResReportSettings> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResReportSettings> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResReportSettings> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResReportSettings> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResReportSettings> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResReportSettings> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResReportSettings> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResReportSettings> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

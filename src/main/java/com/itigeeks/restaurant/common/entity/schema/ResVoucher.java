@@ -7,16 +7,27 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
+
 
 /**
  * Persistent class for entity stored in table "res_voucher"
@@ -51,7 +62,7 @@ public class ResVoucher extends AbstractEntity implements Serializable
     private String     voucherNumber ;
 
     @Column(name="value", nullable=false)
-    private BigDecimal value        ;
+    private Integer value        ;
 
     @Column(name="is_active", nullable=false)
     private Boolean    isActive     ;
@@ -124,11 +135,11 @@ public class ResVoucher extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : value ( DECIMAL ) 
-    public void setValue( BigDecimal value )
+    public void setValue( Integer value )
     {
         this.value = value;
     }
-    public BigDecimal getValue()
+    public Integer getValue()
     {
         return this.value;
     }

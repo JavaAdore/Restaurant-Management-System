@@ -33,13 +33,36 @@ public interface ResPromotionProductDiscountService {
 	public List<ResPromotionProductDiscount> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResPromotionProductDiscount> search( Map<String, Object> criteria ) ;
+	public List<ResPromotionProductDiscount> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResPromotionProductDiscount> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResPromotionProductDiscount> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResPromotionProductDiscount> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResPromotionProductDiscount> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResPromotionProductDiscount> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResPromotionProductDiscount> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResPromotionProductDiscount> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResPromotionProductDiscount> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResPromotionProductDiscount> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

@@ -11,17 +11,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
 import com.itigeeks.restaurant.business.facade.RestaurantFacade;
 import com.itigeeks.restaurant.common.dto.PagingDetailsHolder;
-import com.itigeeks.restaurant.common.enums.PagingDirections;
+import com.itigeeks.restaurant.common.enums.PagingDirection;
 import com.itigeeks.restaurant.common.utils.BeanFactory;
 import com.itigeeks.restaurant.view.factory.ComponentFactory;
 
-public class LoginController extends Pane {
-
+public class LoginController extends AnchorPane {
+	 
 	final private RestaurantFacade restaurantFacade;
 	ComponentFactory componentFactory;
 
@@ -69,14 +69,14 @@ public class LoginController extends Pane {
 			@Override
 			public void handle(ActionEvent arg0) {
 
-				loadUsersPage(PagingDirections.PREVIOUS);
+				loadUsersPage(PagingDirection.PREVIOUS);
 			}
 		});
 		nextPageButton.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				loadUsersPage(PagingDirections.NEXT);
+				loadUsersPage(PagingDirection.NEXT);
 
 			}
 		});
@@ -85,11 +85,11 @@ public class LoginController extends Pane {
 
 	private void loadUsers() {
 
-		loadUsersPage(PagingDirections.NEXT);
+		loadUsersPage(PagingDirection.NEXT);
 
 	}
 
-	public void loadUsersPage(PagingDirections direction) {
+	public void loadUsersPage(PagingDirection direction) {
 
 		List<LoginUserComponent> userLoginComponents = componentFactory
 				.createLoginUsers(pagingDetailsHolder, direction);

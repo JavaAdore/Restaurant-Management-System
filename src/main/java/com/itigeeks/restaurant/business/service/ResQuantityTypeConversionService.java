@@ -33,13 +33,36 @@ public interface ResQuantityTypeConversionService {
 	public List<ResQuantityTypeConversion> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResQuantityTypeConversion> search( Map<String, Object> criteria ) ;
+	public List<ResQuantityTypeConversion> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResQuantityTypeConversion> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResQuantityTypeConversion> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResQuantityTypeConversion> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResQuantityTypeConversion> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResQuantityTypeConversion> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResQuantityTypeConversion> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResQuantityTypeConversion> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResQuantityTypeConversion> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResQuantityTypeConversion> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

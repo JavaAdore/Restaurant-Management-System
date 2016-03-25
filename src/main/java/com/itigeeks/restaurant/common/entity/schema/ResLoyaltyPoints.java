@@ -7,15 +7,25 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_loyalty_points"
@@ -58,7 +68,7 @@ public class ResLoyaltyPoints extends AbstractEntity implements Serializable
     private Date       endTime      ;
 
     @Column(name="multiplier", nullable=false)
-    private BigDecimal multiplier   ;
+    private Integer multiplier   ;
 
 	// "orderTypeId" (column "order_type_id") is not defined by itself because used as FK in a link 
 
@@ -125,11 +135,11 @@ public class ResLoyaltyPoints extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : multiplier ( DECIMAL ) 
-    public void setMultiplier( BigDecimal multiplier )
+    public void setMultiplier( Integer multiplier )
     {
         this.multiplier = multiplier;
     }
-    public BigDecimal getMultiplier()
+    public Integer getMultiplier()
     {
         return this.multiplier;
     }

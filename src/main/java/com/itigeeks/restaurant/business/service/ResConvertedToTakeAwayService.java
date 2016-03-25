@@ -33,13 +33,36 @@ public interface ResConvertedToTakeAwayService {
 	public List<ResConvertedToTakeAway> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResConvertedToTakeAway> search( Map<String, Object> criteria ) ;
+	public List<ResConvertedToTakeAway> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResConvertedToTakeAway> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResConvertedToTakeAway> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResConvertedToTakeAway> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResConvertedToTakeAway> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResConvertedToTakeAway> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResConvertedToTakeAway> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResConvertedToTakeAway> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResConvertedToTakeAway> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResConvertedToTakeAway> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

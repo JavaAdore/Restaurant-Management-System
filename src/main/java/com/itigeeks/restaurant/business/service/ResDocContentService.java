@@ -33,13 +33,36 @@ public interface ResDocContentService {
 	public List<ResDocContent> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResDocContent> search( Map<String, Object> criteria ) ;
+	public List<ResDocContent> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResDocContent> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResDocContent> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDocContent> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDocContent> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDocContent> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResDocContent> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResDocContent> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDocContent> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDocContent> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

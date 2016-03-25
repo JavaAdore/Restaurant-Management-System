@@ -33,13 +33,36 @@ public interface ResCallLogService {
 	public List<ResCallLog> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResCallLog> search( Map<String, Object> criteria ) ;
+	public List<ResCallLog> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResCallLog> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResCallLog> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResCallLog> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResCallLog> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResCallLog> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResCallLog> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResCallLog> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResCallLog> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCallLog> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

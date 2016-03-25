@@ -33,13 +33,36 @@ public interface ResDashboardSettingsService {
 	public List<ResDashboardSettings> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResDashboardSettings> search( Map<String, Object> criteria ) ;
+	public List<ResDashboardSettings> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResDashboardSettings> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResDashboardSettings> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDashboardSettings> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDashboardSettings> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDashboardSettings> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResDashboardSettings> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResDashboardSettings> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDashboardSettings> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDashboardSettings> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

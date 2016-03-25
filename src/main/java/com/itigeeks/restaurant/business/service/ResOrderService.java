@@ -33,13 +33,36 @@ public interface ResOrderService {
 	public List<ResOrder> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResOrder> search( Map<String, Object> criteria ) ;
+	public List<ResOrder> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResOrder> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResOrder> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResOrder> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResOrder> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResOrder> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResOrder> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResOrder> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResOrder> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResOrder> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

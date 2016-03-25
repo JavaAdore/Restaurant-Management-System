@@ -7,15 +7,25 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_payment"
@@ -47,7 +57,7 @@ public class ResPayment extends AbstractEntity implements Serializable
     // ENTITY DATA FIELDS 
     //----------------------------------------------------------------------    
     @Column(name="amount", nullable=false)
-    private BigDecimal amount       ;
+    private Integer amount       ;
 
     @Column(name="cheque_number", length=15)
     private String     chequeNumber ;
@@ -122,11 +132,11 @@ public class ResPayment extends AbstractEntity implements Serializable
     // GETTERS & SETTERS FOR FIELDS
     //----------------------------------------------------------------------
     //--- DATABASE MAPPING : amount ( DECIMAL ) 
-    public void setAmount( BigDecimal amount )
+    public void setAmount( Integer amount )
     {
         this.amount = amount;
     }
-    public BigDecimal getAmount()
+    public Integer getAmount()
     {
         return this.amount;
     }

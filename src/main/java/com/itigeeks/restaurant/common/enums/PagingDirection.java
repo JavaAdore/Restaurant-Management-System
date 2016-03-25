@@ -1,6 +1,6 @@
 package com.itigeeks.restaurant.common.enums;
 
-public enum PagingDirections {
+public enum PagingDirection {
 
 	NEXT,PREVIOUS
 }

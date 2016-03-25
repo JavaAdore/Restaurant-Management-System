@@ -7,15 +7,24 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-import java.util.List;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_discount"
@@ -50,13 +59,13 @@ public class ResDiscount extends AbstractEntity implements Serializable
     private Short      weekDay      ;
 
     @Column(name="discount_rate", nullable=false)
-    private BigDecimal discountRate ;
+    private Integer discountRate ;
 
     @Column(name="is_flat", nullable=false)
     private Boolean    isFlat       ;
 
     @Column(name="minimum_value", nullable=false)
-    private BigDecimal minimumValue ;
+    private Integer minimumValue ;
 
 	// "orderType" (column "order_type") is not defined by itself because used as FK in a link 
 
@@ -106,11 +115,11 @@ public class ResDiscount extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : discount_rate ( DECIMAL ) 
-    public void setDiscountRate( BigDecimal discountRate )
+    public void setDiscountRate( Integer discountRate )
     {
         this.discountRate = discountRate;
     }
-    public BigDecimal getDiscountRate()
+    public Integer getDiscountRate()
     {
         return this.discountRate;
     }
@@ -126,11 +135,11 @@ public class ResDiscount extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : minimum_value ( DECIMAL ) 
-    public void setMinimumValue( BigDecimal minimumValue )
+    public void setMinimumValue( Integer minimumValue )
     {
         this.minimumValue = minimumValue;
     }
-    public BigDecimal getMinimumValue()
+    public Integer getMinimumValue()
     {
         return this.minimumValue;
     }

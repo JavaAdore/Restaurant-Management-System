@@ -2,12 +2,12 @@ package com.itigeeks.restaurant.common.dto;
 
 import java.io.Serializable;
 
-import com.itigeeks.restaurant.common.enums.PagingDirections;
+import com.itigeeks.restaurant.common.enums.PagingDirection;
 
 public class PagingDetailsHolder implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int pageSize = 4;
+	private int pageSize = 10;
 	private int startResult = -1*pageSize;
 
 	public int getPageSize() {
@@ -27,9 +27,9 @@ public class PagingDetailsHolder implements Serializable {
 	}
  
 	public void adjustStartResultToMatchDirection(int numberOfAllResults,
-			PagingDirections direction) {
+			PagingDirection direction) {
 		if (numberOfAllResults > 0 && numberOfAllResults>pageSize) {
-			if (direction != null && direction == PagingDirections.NEXT) {
+			if (direction != null && direction == PagingDirection.NEXT) {
 				if (startResult <= pageSize*-1) {
 					startResult += pageSize;
 
@@ -49,7 +49,7 @@ public class PagingDetailsHolder implements Serializable {
 
 					}
 				}
-			} else if (direction != null&& direction == PagingDirections.PREVIOUS) {
+			} else if (direction != null&& direction == PagingDirection.PREVIOUS) {
 					
 				if (startResult <= 0) 
 				{

@@ -33,13 +33,36 @@ public interface ResCategoryService {
 	public List<ResCategory> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResCategory> search( Map<String, Object> criteria ) ;
+	public List<ResCategory> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResCategory> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResCategory> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResCategory> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResCategory> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResCategory> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResCategory> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResCategory> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResCategory> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCategory> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

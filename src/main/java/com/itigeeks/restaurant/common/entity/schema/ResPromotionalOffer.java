@@ -7,16 +7,25 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
-
-//import javax.validation.constraints.* ;
-//import org.hibernate.validator.constraints.* ;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
+//import javax.validation.constraints.* ;
+//import org.hibernate.validator.constraints.* ;
+
 
 /**
  * Persistent class for entity stored in table "res_promotional_offer"
@@ -64,7 +73,7 @@ public class ResPromotionalOffer extends AbstractEntity implements Serializable
     private Date       endTime      ;
 
     @Column(name="discount_rate")
-    private BigDecimal discountRate ;
+    private Integer discountRate ;
 
     @Column(name="is_flat")
     private Boolean    isFlat       ;
@@ -145,11 +154,11 @@ public class ResPromotionalOffer extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : discount_rate ( DECIMAL ) 
-    public void setDiscountRate( BigDecimal discountRate )
+    public void setDiscountRate( Integer discountRate )
     {
         this.discountRate = discountRate;
     }
-    public BigDecimal getDiscountRate()
+    public Integer getDiscountRate()
     {
         return this.discountRate;
     }

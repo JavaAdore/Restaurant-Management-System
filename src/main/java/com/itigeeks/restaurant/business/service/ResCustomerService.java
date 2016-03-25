@@ -33,13 +33,36 @@ public interface ResCustomerService {
 	public List<ResCustomer> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResCustomer> search( Map<String, Object> criteria ) ;
+	public List<ResCustomer> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResCustomer> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResCustomer> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResCustomer> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResCustomer> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResCustomer> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResCustomer> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResCustomer> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResCustomer> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCustomer> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

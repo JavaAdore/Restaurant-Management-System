@@ -7,15 +7,22 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
+import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-import java.util.List;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_addon"
@@ -56,19 +63,19 @@ public class ResAddon extends AbstractEntity implements Serializable
     private Boolean    isActive     ;
 
     @Column(name="price")
-    private BigDecimal price        ;
+    private Integer price        ;
 
     @Column(name="takeaway_price")
-    private BigDecimal takeawayPrice ;
+    private Integer takeawayPrice ;
 
     @Column(name="web_order_price")
-    private BigDecimal webOrderPrice ;
+    private Integer webOrderPrice ;
 
     @Column(name="delivery_price")
-    private BigDecimal deliveryPrice ;
+    private Integer deliveryPrice ;
 
     @Column(name="waiting_price", nullable=false)
-    private BigDecimal waitingPrice ;
+    private Integer waitingPrice ;
 
 
 
@@ -136,51 +143,51 @@ public class ResAddon extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : price ( DECIMAL ) 
-    public void setPrice( BigDecimal price )
+    public void setPrice( Integer price )
     {
         this.price = price;
     }
-    public BigDecimal getPrice()
+    public Integer getPrice()
     {
         return this.price;
     }
 
     //--- DATABASE MAPPING : takeaway_price ( DECIMAL ) 
-    public void setTakeawayPrice( BigDecimal takeawayPrice )
+    public void setTakeawayPrice( Integer takeawayPrice )
     {
         this.takeawayPrice = takeawayPrice;
     }
-    public BigDecimal getTakeawayPrice()
+    public Integer getTakeawayPrice()
     {
         return this.takeawayPrice;
     }
 
     //--- DATABASE MAPPING : web_order_price ( DECIMAL ) 
-    public void setWebOrderPrice( BigDecimal webOrderPrice )
+    public void setWebOrderPrice( Integer webOrderPrice )
     {
         this.webOrderPrice = webOrderPrice;
     }
-    public BigDecimal getWebOrderPrice()
+    public Integer getWebOrderPrice()
     {
         return this.webOrderPrice;
     }
 
     //--- DATABASE MAPPING : delivery_price ( DECIMAL ) 
-    public void setDeliveryPrice( BigDecimal deliveryPrice )
+    public void setDeliveryPrice( Integer deliveryPrice )
     {
         this.deliveryPrice = deliveryPrice;
     }
-    public BigDecimal getDeliveryPrice()
+    public Integer getDeliveryPrice()
     {
         return this.deliveryPrice;
     }
 
     //--- DATABASE MAPPING : waiting_price ( DECIMAL ) 
-    public void setWaitingPrice( BigDecimal waitingPrice )
+    public void setWaitingPrice( Integer waitingPrice )
     {
         this.waitingPrice = waitingPrice;
     }
-    public BigDecimal getWaitingPrice()
+    public Integer getWaitingPrice()
     {
         return this.waitingPrice;
     }

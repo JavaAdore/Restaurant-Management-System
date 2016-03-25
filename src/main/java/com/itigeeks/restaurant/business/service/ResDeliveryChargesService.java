@@ -33,13 +33,36 @@ public interface ResDeliveryChargesService {
 	public List<ResDeliveryCharges> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResDeliveryCharges> search( Map<String, Object> criteria ) ;
+	public List<ResDeliveryCharges> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResDeliveryCharges> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResDeliveryCharges> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDeliveryCharges> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResDeliveryCharges> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDeliveryCharges> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResDeliveryCharges> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResDeliveryCharges> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResDeliveryCharges> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDeliveryCharges> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.itigeeks.restaurant.common.entity.schema.ResCloakRoomStatus;
+import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 import com.itigeeks.restaurant.dataaccess.dao.ResCloakRoomStatusDAO;
 
 /**
@@ -57,10 +58,6 @@ public class ResCloakRoomStatusDAOImpl extends AbstractDAO implements ResCloakRo
 	}
 	
 	
-	public List<ResCloakRoomStatus> search( Map<String, Object> criteria )
-	{
-		return super.search( ResCloakRoomStatus.class  , criteria);
-	}
 
 	
 	public Integer countAll()
@@ -68,14 +65,61 @@ public class ResCloakRoomStatusDAOImpl extends AbstractDAO implements ResCloakRo
 		return super.countAll(ResCloakRoomStatus.class);
 	}
 
-	public List<ResCloakRoomStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
-	{
-		return super.search( ResCloakRoomStatus.class , criteria ,  firstPage ,  pageSize ); 
-	}
+	
 
 	public List<ResCloakRoomStatus> loadAll(Integer startPage , Integer pageSize )
 	{
 		return super.loadAll( ResCloakRoomStatus.class , startPage , pageSize);
 	}
+	
+	
+	
+	
+
+	@Override
+	public List<ResCloakRoomStatus> load(Map<String, Object> criteria) {
+		return this.load(criteria , QueryConjunctionType.AND);
+	}
+
+	@Override
+	public List<ResCloakRoomStatus> load(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+			
+			return (List<ResCloakRoomStatus>) super.load(ResCloakRoomStatus.class , criteria ,  conjuncationType );
+	}
+
+	@Override
+	public List<ResCloakRoomStatus> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,QueryConjunctionType conjuncationType) {
+		
+		return this.load( criteria,  startPage,  pageSize,null , null, conjuncationType);
+	}
+	
+
+	@Override
+	public List<ResCloakRoomStatus> load(Map<String, Object> criteria, Integer startPage,Integer pageSize) {
+			
+		return this.load( criteria,  startPage,  pageSize,null , null, QueryConjunctionType.AND);
+
+	}
+
+	@Override
+	public List<ResCloakRoomStatus> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,String sortField, Boolean ascending,QueryConjunctionType conjuncationType) {
+			
+		return (List<ResCloakRoomStatus>) super.load(ResCloakRoomStatus.class , criteria , startPage , pageSize ,  sortField , ascending ,  conjuncationType );
+	}
+
+	
+	@Override
+	public Integer getCount(Map<String, Object> criteria) {
+			return this.getCount(criteria ,QueryConjunctionType.AND );
+	}
+
+	@Override
+	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+		return super.getCount(ResCloakRoomStatus.class  , criteria ,conjuncationType) ;
+	}
+			
+
+
+	
 
 }

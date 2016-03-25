@@ -33,13 +33,36 @@ public interface ResTableService {
 	public List<ResTable> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
 	
 	
-	public List<ResTable> search( Map<String, Object> criteria ) ;
+	public List<ResTable> load( Map<String, Object> criteria ) ;
 
 	
 	public Integer countAll();
-	
-	public List<ResTable> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
 
+				
 	public List<ResTable> loadAll(Integer startPage , Integer pageSize ) ;
+	
+	public List<ResTable> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+	
+	public List<ResTable> loadWithAllCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResTable> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
+	
+	public List<ResTable> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+
+	public List<ResTable> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
+	
+	public List<ResTable> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResTable> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
+	
+	
+	public Integer getCount( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+
+	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
+
+
+
 
 }

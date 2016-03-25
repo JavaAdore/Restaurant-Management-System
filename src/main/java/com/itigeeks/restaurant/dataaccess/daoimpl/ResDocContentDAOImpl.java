@@ -9,6 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import com.itigeeks.restaurant.common.entity.schema.ResDocContent;
+import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 import com.itigeeks.restaurant.dataaccess.dao.ResDocContentDAO;
 
 /**
@@ -57,10 +58,6 @@ public class ResDocContentDAOImpl extends AbstractDAO implements ResDocContentDA
 	}
 	
 	
-	public List<ResDocContent> search( Map<String, Object> criteria )
-	{
-		return super.search( ResDocContent.class  , criteria);
-	}
 
 	
 	public Integer countAll()
@@ -68,14 +65,61 @@ public class ResDocContentDAOImpl extends AbstractDAO implements ResDocContentDA
 		return super.countAll(ResDocContent.class);
 	}
 
-	public List<ResDocContent> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
-	{
-		return super.search( ResDocContent.class , criteria ,  firstPage ,  pageSize ); 
-	}
+	
 
 	public List<ResDocContent> loadAll(Integer startPage , Integer pageSize )
 	{
 		return super.loadAll( ResDocContent.class , startPage , pageSize);
 	}
+	
+	
+	
+	
+
+	@Override
+	public List<ResDocContent> load(Map<String, Object> criteria) {
+		return this.load(criteria , QueryConjunctionType.AND);
+	}
+
+	@Override
+	public List<ResDocContent> load(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+			
+			return (List<ResDocContent>) super.load(ResDocContent.class , criteria ,  conjuncationType );
+	}
+
+	@Override
+	public List<ResDocContent> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,QueryConjunctionType conjuncationType) {
+		
+		return this.load( criteria,  startPage,  pageSize,null , null, conjuncationType);
+	}
+	
+
+	@Override
+	public List<ResDocContent> load(Map<String, Object> criteria, Integer startPage,Integer pageSize) {
+			
+		return this.load( criteria,  startPage,  pageSize,null , null, QueryConjunctionType.AND);
+
+	}
+
+	@Override
+	public List<ResDocContent> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,String sortField, Boolean ascending,QueryConjunctionType conjuncationType) {
+			
+		return (List<ResDocContent>) super.load(ResDocContent.class , criteria , startPage , pageSize ,  sortField , ascending ,  conjuncationType );
+	}
+
+	
+	@Override
+	public Integer getCount(Map<String, Object> criteria) {
+			return this.getCount(criteria ,QueryConjunctionType.AND );
+	}
+
+	@Override
+	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
+		return super.getCount(ResDocContent.class  , criteria ,conjuncationType) ;
+	}
+			
+
+
+	
 
 }

@@ -7,14 +7,20 @@
 package com.itigeeks.restaurant.common.entity.schema;
 
 import java.io.Serializable;
-import com.itigeeks.restaurant.common.entity.AbstractEntity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+import com.itigeeks.restaurant.common.entity.AbstractEntity;
 //import javax.validation.constraints.* ;
 //import org.hibernate.validator.constraints.* ;
 
-import java.math.BigDecimal;
-
-import javax.persistence.*;
 
 /**
  * Persistent class for entity stored in table "res_deliver_charges"
@@ -49,7 +55,7 @@ public class ResDeliverCharges extends AbstractEntity implements Serializable
     private String     distance     ;
 
     @Column(name="amount")
-    private BigDecimal amount       ;
+    private Integer amount       ;
 
     @Column(name="is_active", nullable=false)
     private Boolean    isActive     ;
@@ -97,11 +103,11 @@ public class ResDeliverCharges extends AbstractEntity implements Serializable
     }
 
     //--- DATABASE MAPPING : amount ( DECIMAL ) 
-    public void setAmount( BigDecimal amount )
+    public void setAmount( Integer amount )
     {
         this.amount = amount;
     }
-    public BigDecimal getAmount()
+    public Integer getAmount()
     {
         return this.amount;
     }

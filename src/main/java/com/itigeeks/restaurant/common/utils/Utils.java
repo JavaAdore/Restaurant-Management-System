@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.StringReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -31,6 +32,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.InputSource;
 
+import com.itigeeks.restaurant.common.annotation.DisplayOrder;
 import com.itigeeks.restaurant.common.entity.AbstractEntity;
 
 public class Utils {
@@ -343,6 +345,18 @@ public class Utils {
 		return result;
 	}
 
+	
+	public static String getAbsoluteStringValue(Object str) 
+	{
+		if(str instanceof String )
+		{
+			return getAbsoluteStringValue((String)(str));
+		}else
+		{
+			return String.valueOf(str);
+		}
+	}
+	
 	public static String getAbsoluteStringValue(String str) {
 		if (isNotEmptyString(str)) {
 			return str.trim();
@@ -523,4 +537,54 @@ public class Utils {
 		return c.getTime();
 		
 	}
+
+	public static boolean isFieldAnnotatedBy(Field field,
+			Class class1) {
+
+		if(isNotNull(field) && isNotNull(class1))
+		{
+			return field.isAnnotationPresent(class1);
+		}
+		return false;
+	}
+	
+	
+
+	public static Object getGetterValueOf(Field field, Object obj) {
+		
+		if(isNotNull(field) && isNotNull(obj))
+		{
+			String getterMethodName = getGetterMethodNameOfField(field);
+			
+			try {
+				Method method = obj.getClass().getMethod(getterMethodName);
+				Object fieldGetterValue = method.invoke(obj);
+				return fieldGetterValue;
+			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+		return null;
+	}
+
+	private static String getGetterMethodNameOfField(Field field) {
+		
+		String fieldName = field.getName();
+		if(fieldName.length()>1)
+		{
+			return "get" + fieldName.substring(0,1).toUpperCase()+fieldName.substring(1);
+		}else
+		{
+			return "get" + fieldName.toUpperCase();
+		}
+	}
+	
+	
+	
 }
