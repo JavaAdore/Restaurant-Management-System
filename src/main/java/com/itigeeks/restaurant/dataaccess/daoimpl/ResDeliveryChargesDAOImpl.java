@@ -67,4 +67,15 @@ public class ResDeliveryChargesDAOImpl extends AbstractDAO implements ResDeliver
 	{
 		return super.countAll(ResDeliveryCharges.class);
 	}
+
+	public List<ResDeliveryCharges> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResDeliveryCharges.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResDeliveryCharges> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResDeliveryCharges.class , startPage , pageSize);
+	}
+
 }

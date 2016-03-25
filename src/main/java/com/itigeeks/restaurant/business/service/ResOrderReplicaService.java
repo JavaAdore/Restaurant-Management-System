@@ -38,4 +38,8 @@ public interface ResOrderReplicaService {
 	
 	public Integer countAll();
 	
+	public List<ResOrderReplica> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResOrderReplica> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

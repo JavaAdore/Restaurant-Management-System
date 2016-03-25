@@ -67,4 +67,15 @@ public class ResCustomerCommentDAOImpl extends AbstractDAO implements ResCustome
 	{
 		return super.countAll(ResCustomerComment.class);
 	}
+
+	public List<ResCustomerComment> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCustomerComment.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCustomerComment> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCustomerComment.class , startPage , pageSize);
+	}
+
 }

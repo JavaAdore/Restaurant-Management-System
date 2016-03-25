@@ -38,4 +38,8 @@ public interface ResZreportPermissionDAO {
 	
 	public Integer countAll();
 	
+	public List<ResZreportPermission> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResZreportPermission> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

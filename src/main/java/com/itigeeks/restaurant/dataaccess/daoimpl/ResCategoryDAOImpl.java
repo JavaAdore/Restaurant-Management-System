@@ -67,4 +67,15 @@ public class ResCategoryDAOImpl extends AbstractDAO implements ResCategoryDAO  ,
 	{
 		return super.countAll(ResCategory.class);
 	}
+
+	public List<ResCategory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCategory.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCategory> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCategory.class , startPage , pageSize);
+	}
+
 }

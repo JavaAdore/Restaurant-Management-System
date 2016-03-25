@@ -67,4 +67,15 @@ public class ResProductAddonDAOImpl extends AbstractDAO implements ResProductAdd
 	{
 		return super.countAll(ResProductAddon.class);
 	}
+
+	public List<ResProductAddon> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResProductAddon.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResProductAddon> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResProductAddon.class , startPage , pageSize);
+	}
+
 }

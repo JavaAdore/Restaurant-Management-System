@@ -38,4 +38,8 @@ public interface ResSpecialInstructionsDAO {
 	
 	public Integer countAll();
 	
+	public List<ResSpecialInstructions> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResSpecialInstructions> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

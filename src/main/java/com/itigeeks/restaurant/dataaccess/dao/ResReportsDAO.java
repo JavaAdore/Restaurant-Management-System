@@ -38,4 +38,8 @@ public interface ResReportsDAO {
 	
 	public Integer countAll();
 	
+	public List<ResReports> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResReports> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

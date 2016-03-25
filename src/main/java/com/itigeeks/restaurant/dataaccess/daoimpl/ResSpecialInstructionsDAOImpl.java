@@ -67,4 +67,15 @@ public class ResSpecialInstructionsDAOImpl extends AbstractDAO implements ResSpe
 	{
 		return super.countAll(ResSpecialInstructions.class);
 	}
+
+	public List<ResSpecialInstructions> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResSpecialInstructions.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResSpecialInstructions> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResSpecialInstructions.class , startPage , pageSize);
+	}
+
 }

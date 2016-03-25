@@ -38,4 +38,8 @@ public interface ResProductPurchaseHistoryDAO {
 	
 	public Integer countAll();
 	
+	public List<ResProductPurchaseHistory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResProductPurchaseHistory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

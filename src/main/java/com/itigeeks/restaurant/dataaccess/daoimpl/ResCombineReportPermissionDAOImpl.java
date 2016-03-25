@@ -67,4 +67,15 @@ public class ResCombineReportPermissionDAOImpl extends AbstractDAO implements Re
 	{
 		return super.countAll(ResCombineReportPermission.class);
 	}
+
+	public List<ResCombineReportPermission> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCombineReportPermission.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCombineReportPermission> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCombineReportPermission.class , startPage , pageSize);
+	}
+
 }

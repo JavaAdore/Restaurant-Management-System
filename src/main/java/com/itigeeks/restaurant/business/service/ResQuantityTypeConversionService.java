@@ -38,4 +38,8 @@ public interface ResQuantityTypeConversionService {
 	
 	public Integer countAll();
 	
+	public List<ResQuantityTypeConversion> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResQuantityTypeConversion> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

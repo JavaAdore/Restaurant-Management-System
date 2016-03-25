@@ -67,4 +67,15 @@ public class ResButtonPermissionTypeDAOImpl extends AbstractDAO implements ResBu
 	{
 		return super.countAll(ResButtonPermissionType.class);
 	}
+
+	public List<ResButtonPermissionType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResButtonPermissionType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResButtonPermissionType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResButtonPermissionType.class , startPage , pageSize);
+	}
+
 }

@@ -38,4 +38,8 @@ public interface ResCountryService {
 	
 	public Integer countAll();
 	
+	public List<ResCountry> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCountry> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

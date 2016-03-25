@@ -67,4 +67,15 @@ public class ResUserTypeDAOImpl extends AbstractDAO implements ResUserTypeDAO  ,
 	{
 		return super.countAll(ResUserType.class);
 	}
+
+	public List<ResUserType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResUserType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResUserType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResUserType.class , startPage , pageSize);
+	}
+
 }

@@ -67,4 +67,15 @@ public class ResPrinterModelDAOImpl extends AbstractDAO implements ResPrinterMod
 	{
 		return super.countAll(ResPrinterModel.class);
 	}
+
+	public List<ResPrinterModel> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPrinterModel.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPrinterModel> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPrinterModel.class , startPage , pageSize);
+	}
+
 }

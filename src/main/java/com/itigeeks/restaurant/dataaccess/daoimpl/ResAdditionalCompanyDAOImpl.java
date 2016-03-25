@@ -67,4 +67,15 @@ public class ResAdditionalCompanyDAOImpl extends AbstractDAO implements ResAddit
 	{
 		return super.countAll(ResAdditionalCompany.class);
 	}
+
+	public List<ResAdditionalCompany> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResAdditionalCompany.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResAdditionalCompany> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResAdditionalCompany.class , startPage , pageSize);
+	}
+
 }

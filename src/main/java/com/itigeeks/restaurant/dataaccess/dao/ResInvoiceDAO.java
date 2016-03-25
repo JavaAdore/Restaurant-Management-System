@@ -38,4 +38,8 @@ public interface ResInvoiceDAO {
 	
 	public Integer countAll();
 	
+	public List<ResInvoice> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResInvoice> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -38,4 +38,8 @@ public interface ResPaymentMethodService {
 	
 	public Integer countAll();
 	
+	public List<ResPaymentMethod> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResPaymentMethod> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

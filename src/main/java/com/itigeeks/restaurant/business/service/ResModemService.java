@@ -38,4 +38,8 @@ public interface ResModemService {
 	
 	public Integer countAll();
 	
+	public List<ResModem> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResModem> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

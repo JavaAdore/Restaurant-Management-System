@@ -67,4 +67,15 @@ public class ResReservationConfirmationDAOImpl extends AbstractDAO implements Re
 	{
 		return super.countAll(ResReservationConfirmation.class);
 	}
+
+	public List<ResReservationConfirmation> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResReservationConfirmation.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResReservationConfirmation> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResReservationConfirmation.class , startPage , pageSize);
+	}
+
 }

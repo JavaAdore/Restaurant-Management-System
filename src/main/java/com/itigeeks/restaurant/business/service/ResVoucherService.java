@@ -38,4 +38,8 @@ public interface ResVoucherService {
 	
 	public Integer countAll();
 	
+	public List<ResVoucher> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResVoucher> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

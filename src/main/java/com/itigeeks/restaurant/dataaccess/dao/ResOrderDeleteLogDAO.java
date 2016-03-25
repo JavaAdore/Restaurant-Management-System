@@ -38,4 +38,8 @@ public interface ResOrderDeleteLogDAO {
 	
 	public Integer countAll();
 	
+	public List<ResOrderDeleteLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResOrderDeleteLog> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

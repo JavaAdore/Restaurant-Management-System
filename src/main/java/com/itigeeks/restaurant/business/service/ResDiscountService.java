@@ -38,4 +38,8 @@ public interface ResDiscountService {
 	
 	public Integer countAll();
 	
+	public List<ResDiscount> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDiscount> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

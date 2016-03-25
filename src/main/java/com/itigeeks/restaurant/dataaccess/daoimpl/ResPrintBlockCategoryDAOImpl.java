@@ -67,4 +67,15 @@ public class ResPrintBlockCategoryDAOImpl extends AbstractDAO implements ResPrin
 	{
 		return super.countAll(ResPrintBlockCategory.class);
 	}
+
+	public List<ResPrintBlockCategory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPrintBlockCategory.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPrintBlockCategory> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPrintBlockCategory.class , startPage , pageSize);
+	}
+
 }

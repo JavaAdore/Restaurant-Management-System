@@ -67,4 +67,15 @@ public class ResReportSettingsDAOImpl extends AbstractDAO implements ResReportSe
 	{
 		return super.countAll(ResReportSettings.class);
 	}
+
+	public List<ResReportSettings> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResReportSettings.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResReportSettings> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResReportSettings.class , startPage , pageSize);
+	}
+
 }

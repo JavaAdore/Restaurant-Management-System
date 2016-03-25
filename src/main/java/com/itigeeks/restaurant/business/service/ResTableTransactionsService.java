@@ -38,4 +38,8 @@ public interface ResTableTransactionsService {
 	
 	public Integer countAll();
 	
+	public List<ResTableTransactions> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResTableTransactions> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -67,4 +67,15 @@ public class ResProductDAOImpl extends AbstractDAO implements ResProductDAO  , S
 	{
 		return super.countAll(ResProduct.class);
 	}
+
+	public List<ResProduct> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResProduct.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResProduct> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResProduct.class , startPage , pageSize);
+	}
+
 }

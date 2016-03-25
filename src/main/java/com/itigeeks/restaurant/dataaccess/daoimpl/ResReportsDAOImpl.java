@@ -67,4 +67,15 @@ public class ResReportsDAOImpl extends AbstractDAO implements ResReportsDAO  , S
 	{
 		return super.countAll(ResReports.class);
 	}
+
+	public List<ResReports> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResReports.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResReports> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResReports.class , startPage , pageSize);
+	}
+
 }

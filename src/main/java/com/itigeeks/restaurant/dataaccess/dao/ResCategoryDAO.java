@@ -38,4 +38,8 @@ public interface ResCategoryDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCategory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCategory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

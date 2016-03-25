@@ -38,4 +38,8 @@ public interface ResProductAddonDAO {
 	
 	public Integer countAll();
 	
+	public List<ResProductAddon> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResProductAddon> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

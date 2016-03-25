@@ -38,4 +38,8 @@ public interface ResPromotionProductDiscountDAO {
 	
 	public Integer countAll();
 	
+	public List<ResPromotionProductDiscount> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResPromotionProductDiscount> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

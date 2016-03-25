@@ -38,4 +38,8 @@ public interface ResPrepLocationService {
 	
 	public Integer countAll();
 	
+	public List<ResPrepLocation> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResPrepLocation> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

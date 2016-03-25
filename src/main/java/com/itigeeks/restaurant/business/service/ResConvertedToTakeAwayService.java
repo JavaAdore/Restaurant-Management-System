@@ -38,4 +38,8 @@ public interface ResConvertedToTakeAwayService {
 	
 	public Integer countAll();
 	
+	public List<ResConvertedToTakeAway> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResConvertedToTakeAway> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

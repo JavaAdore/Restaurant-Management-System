@@ -67,4 +67,15 @@ public class ResButtonPermissionSettingsDAOImpl extends AbstractDAO implements R
 	{
 		return super.countAll(ResButtonPermissionSettings.class);
 	}
+
+	public List<ResButtonPermissionSettings> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResButtonPermissionSettings.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResButtonPermissionSettings> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResButtonPermissionSettings.class , startPage , pageSize);
+	}
+
 }

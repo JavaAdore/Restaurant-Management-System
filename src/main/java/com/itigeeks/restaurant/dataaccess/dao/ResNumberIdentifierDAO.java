@@ -38,4 +38,8 @@ public interface ResNumberIdentifierDAO {
 	
 	public Integer countAll();
 	
+	public List<ResNumberIdentifier> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResNumberIdentifier> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

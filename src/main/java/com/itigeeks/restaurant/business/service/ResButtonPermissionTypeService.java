@@ -38,4 +38,8 @@ public interface ResButtonPermissionTypeService {
 	
 	public Integer countAll();
 	
+	public List<ResButtonPermissionType> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResButtonPermissionType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

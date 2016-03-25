@@ -67,4 +67,15 @@ public class ResOrderStatusDAOImpl extends AbstractDAO implements ResOrderStatus
 	{
 		return super.countAll(ResOrderStatus.class);
 	}
+
+	public List<ResOrderStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResOrderStatus.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResOrderStatus> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResOrderStatus.class , startPage , pageSize);
+	}
+
 }

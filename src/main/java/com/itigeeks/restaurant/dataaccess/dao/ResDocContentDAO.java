@@ -38,4 +38,8 @@ public interface ResDocContentDAO {
 	
 	public Integer countAll();
 	
+	public List<ResDocContent> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResDocContent> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -67,4 +67,15 @@ public class ResCloakRoomStatusDAOImpl extends AbstractDAO implements ResCloakRo
 	{
 		return super.countAll(ResCloakRoomStatus.class);
 	}
+
+	public List<ResCloakRoomStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCloakRoomStatus.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCloakRoomStatus> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCloakRoomStatus.class , startPage , pageSize);
+	}
+
 }

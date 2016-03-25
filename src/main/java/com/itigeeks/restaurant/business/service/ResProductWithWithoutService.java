@@ -38,4 +38,8 @@ public interface ResProductWithWithoutService {
 	
 	public Integer countAll();
 	
+	public List<ResProductWithWithout> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResProductWithWithout> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

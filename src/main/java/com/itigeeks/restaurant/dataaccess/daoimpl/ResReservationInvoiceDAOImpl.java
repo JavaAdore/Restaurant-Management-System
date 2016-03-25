@@ -67,4 +67,15 @@ public class ResReservationInvoiceDAOImpl extends AbstractDAO implements ResRese
 	{
 		return super.countAll(ResReservationInvoice.class);
 	}
+
+	public List<ResReservationInvoice> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResReservationInvoice.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResReservationInvoice> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResReservationInvoice.class , startPage , pageSize);
+	}
+
 }

@@ -67,4 +67,15 @@ public class ResConvertedToTakeAwayDAOImpl extends AbstractDAO implements ResCon
 	{
 		return super.countAll(ResConvertedToTakeAway.class);
 	}
+
+	public List<ResConvertedToTakeAway> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResConvertedToTakeAway.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResConvertedToTakeAway> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResConvertedToTakeAway.class , startPage , pageSize);
+	}
+
 }

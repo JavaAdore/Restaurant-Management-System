@@ -38,4 +38,8 @@ public interface ResVoucherExclusionsService {
 	
 	public Integer countAll();
 	
+	public List<ResVoucherExclusions> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResVoucherExclusions> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

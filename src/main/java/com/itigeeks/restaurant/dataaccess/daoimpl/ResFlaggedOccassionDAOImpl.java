@@ -67,4 +67,15 @@ public class ResFlaggedOccassionDAOImpl extends AbstractDAO implements ResFlagge
 	{
 		return super.countAll(ResFlaggedOccassion.class);
 	}
+
+	public List<ResFlaggedOccassion> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResFlaggedOccassion.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResFlaggedOccassion> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResFlaggedOccassion.class , startPage , pageSize);
+	}
+
 }

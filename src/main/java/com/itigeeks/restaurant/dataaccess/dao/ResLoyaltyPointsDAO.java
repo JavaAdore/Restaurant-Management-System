@@ -38,4 +38,8 @@ public interface ResLoyaltyPointsDAO {
 	
 	public Integer countAll();
 	
+	public List<ResLoyaltyPoints> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResLoyaltyPoints> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -38,4 +38,8 @@ public interface ResVoucherDAO {
 	
 	public Integer countAll();
 	
+	public List<ResVoucher> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResVoucher> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

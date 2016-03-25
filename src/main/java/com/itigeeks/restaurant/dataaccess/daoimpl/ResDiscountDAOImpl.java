@@ -67,4 +67,15 @@ public class ResDiscountDAOImpl extends AbstractDAO implements ResDiscountDAO  ,
 	{
 		return super.countAll(ResDiscount.class);
 	}
+
+	public List<ResDiscount> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResDiscount.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResDiscount> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResDiscount.class , startPage , pageSize);
+	}
+
 }

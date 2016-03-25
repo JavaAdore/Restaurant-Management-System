@@ -38,4 +38,8 @@ public interface ResProductWasteHistoryService {
 	
 	public Integer countAll();
 	
+	public List<ResProductWasteHistory> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResProductWasteHistory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

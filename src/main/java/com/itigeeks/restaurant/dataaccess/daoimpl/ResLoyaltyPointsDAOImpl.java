@@ -67,4 +67,15 @@ public class ResLoyaltyPointsDAOImpl extends AbstractDAO implements ResLoyaltyPo
 	{
 		return super.countAll(ResLoyaltyPoints.class);
 	}
+
+	public List<ResLoyaltyPoints> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResLoyaltyPoints.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResLoyaltyPoints> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResLoyaltyPoints.class , startPage , pageSize);
+	}
+
 }

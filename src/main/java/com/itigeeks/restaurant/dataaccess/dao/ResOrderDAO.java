@@ -38,4 +38,8 @@ public interface ResOrderDAO {
 	
 	public Integer countAll();
 	
+	public List<ResOrder> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResOrder> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

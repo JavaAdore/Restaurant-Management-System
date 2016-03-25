@@ -38,4 +38,8 @@ public interface ResFloorService {
 	
 	public Integer countAll();
 	
+	public List<ResFloor> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResFloor> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

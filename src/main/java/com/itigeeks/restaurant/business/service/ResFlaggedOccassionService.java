@@ -38,4 +38,8 @@ public interface ResFlaggedOccassionService {
 	
 	public Integer countAll();
 	
+	public List<ResFlaggedOccassion> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResFlaggedOccassion> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

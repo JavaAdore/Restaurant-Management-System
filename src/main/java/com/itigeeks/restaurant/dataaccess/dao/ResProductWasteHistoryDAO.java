@@ -38,4 +38,8 @@ public interface ResProductWasteHistoryDAO {
 	
 	public Integer countAll();
 	
+	public List<ResProductWasteHistory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResProductWasteHistory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

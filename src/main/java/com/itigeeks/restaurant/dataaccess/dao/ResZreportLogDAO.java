@@ -38,4 +38,8 @@ public interface ResZreportLogDAO {
 	
 	public Integer countAll();
 	
+	public List<ResZreportLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResZreportLog> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

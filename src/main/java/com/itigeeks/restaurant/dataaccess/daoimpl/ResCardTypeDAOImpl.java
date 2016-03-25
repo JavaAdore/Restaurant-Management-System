@@ -67,4 +67,15 @@ public class ResCardTypeDAOImpl extends AbstractDAO implements ResCardTypeDAO  ,
 	{
 		return super.countAll(ResCardType.class);
 	}
+
+	public List<ResCardType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCardType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCardType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCardType.class , startPage , pageSize);
+	}
+
 }

@@ -67,4 +67,15 @@ public class ResPrinterDAOImpl extends AbstractDAO implements ResPrinterDAO  , S
 	{
 		return super.countAll(ResPrinter.class);
 	}
+
+	public List<ResPrinter> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPrinter.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPrinter> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPrinter.class , startPage , pageSize);
+	}
+
 }

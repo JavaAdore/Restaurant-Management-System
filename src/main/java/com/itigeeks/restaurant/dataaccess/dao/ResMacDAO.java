@@ -38,4 +38,8 @@ public interface ResMacDAO {
 	
 	public Integer countAll();
 	
+	public List<ResMac> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResMac> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

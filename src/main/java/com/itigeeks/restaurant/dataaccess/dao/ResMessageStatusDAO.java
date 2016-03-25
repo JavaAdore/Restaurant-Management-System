@@ -38,4 +38,8 @@ public interface ResMessageStatusDAO {
 	
 	public Integer countAll();
 	
+	public List<ResMessageStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResMessageStatus> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

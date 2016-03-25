@@ -38,4 +38,8 @@ public interface ResLogDAO {
 	
 	public Integer countAll();
 	
+	public List<ResLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResLog> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

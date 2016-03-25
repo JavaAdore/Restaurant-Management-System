@@ -67,4 +67,15 @@ public class ResLogTypeDAOImpl extends AbstractDAO implements ResLogTypeDAO  , S
 	{
 		return super.countAll(ResLogType.class);
 	}
+
+	public List<ResLogType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResLogType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResLogType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResLogType.class , startPage , pageSize);
+	}
+
 }

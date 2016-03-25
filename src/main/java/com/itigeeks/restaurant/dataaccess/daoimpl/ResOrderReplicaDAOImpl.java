@@ -67,4 +67,15 @@ public class ResOrderReplicaDAOImpl extends AbstractDAO implements ResOrderRepli
 	{
 		return super.countAll(ResOrderReplica.class);
 	}
+
+	public List<ResOrderReplica> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResOrderReplica.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResOrderReplica> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResOrderReplica.class , startPage , pageSize);
+	}
+
 }

@@ -67,4 +67,15 @@ public class ResDepositTypeDAOImpl extends AbstractDAO implements ResDepositType
 	{
 		return super.countAll(ResDepositType.class);
 	}
+
+	public List<ResDepositType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResDepositType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResDepositType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResDepositType.class , startPage , pageSize);
+	}
+
 }

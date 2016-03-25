@@ -38,4 +38,8 @@ public interface ResMessageStatusService {
 	
 	public Integer countAll();
 	
+	public List<ResMessageStatus> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResMessageStatus> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

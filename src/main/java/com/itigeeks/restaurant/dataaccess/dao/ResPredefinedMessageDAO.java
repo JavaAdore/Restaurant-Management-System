@@ -38,4 +38,8 @@ public interface ResPredefinedMessageDAO {
 	
 	public Integer countAll();
 	
+	public List<ResPredefinedMessage> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResPredefinedMessage> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

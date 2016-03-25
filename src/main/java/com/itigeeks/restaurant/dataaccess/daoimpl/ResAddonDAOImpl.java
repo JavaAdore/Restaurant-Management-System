@@ -67,4 +67,15 @@ public class ResAddonDAOImpl extends AbstractDAO implements ResAddonDAO  , Seria
 	{
 		return super.countAll(ResAddon.class);
 	}
+
+	public List<ResAddon> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResAddon.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResAddon> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResAddon.class , startPage , pageSize);
+	}
+
 }

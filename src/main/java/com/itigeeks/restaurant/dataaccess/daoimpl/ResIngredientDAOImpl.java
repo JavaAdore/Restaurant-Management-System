@@ -67,4 +67,15 @@ public class ResIngredientDAOImpl extends AbstractDAO implements ResIngredientDA
 	{
 		return super.countAll(ResIngredient.class);
 	}
+
+	public List<ResIngredient> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResIngredient.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResIngredient> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResIngredient.class , startPage , pageSize);
+	}
+
 }

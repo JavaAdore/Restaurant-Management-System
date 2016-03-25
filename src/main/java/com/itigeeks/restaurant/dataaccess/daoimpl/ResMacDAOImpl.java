@@ -67,4 +67,15 @@ public class ResMacDAOImpl extends AbstractDAO implements ResMacDAO  , Serializa
 	{
 		return super.countAll(ResMac.class);
 	}
+
+	public List<ResMac> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResMac.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResMac> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResMac.class , startPage , pageSize);
+	}
+
 }

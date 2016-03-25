@@ -67,4 +67,15 @@ public class ResReservationTimeDAOImpl extends AbstractDAO implements ResReserva
 	{
 		return super.countAll(ResReservationTime.class);
 	}
+
+	public List<ResReservationTime> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResReservationTime.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResReservationTime> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResReservationTime.class , startPage , pageSize);
+	}
+
 }

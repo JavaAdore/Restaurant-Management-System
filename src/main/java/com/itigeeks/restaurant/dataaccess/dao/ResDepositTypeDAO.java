@@ -38,4 +38,8 @@ public interface ResDepositTypeDAO {
 	
 	public Integer countAll();
 	
+	public List<ResDepositType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResDepositType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

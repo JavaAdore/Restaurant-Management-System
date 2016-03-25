@@ -38,4 +38,8 @@ public interface ResReservationService {
 	
 	public Integer countAll();
 	
+	public List<ResReservation> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResReservation> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

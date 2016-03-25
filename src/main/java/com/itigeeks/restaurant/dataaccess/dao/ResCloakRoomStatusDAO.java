@@ -38,4 +38,8 @@ public interface ResCloakRoomStatusDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCloakRoomStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCloakRoomStatus> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

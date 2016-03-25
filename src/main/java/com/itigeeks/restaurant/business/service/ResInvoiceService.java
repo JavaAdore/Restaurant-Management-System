@@ -38,4 +38,8 @@ public interface ResInvoiceService {
 	
 	public Integer countAll();
 	
+	public List<ResInvoice> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResInvoice> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

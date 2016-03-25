@@ -38,4 +38,8 @@ public interface ResCustomerCommentService {
 	
 	public Integer countAll();
 	
+	public List<ResCustomerComment> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCustomerComment> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

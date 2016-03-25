@@ -38,4 +38,8 @@ public interface ResDeliveryChargesDAO {
 	
 	public Integer countAll();
 	
+	public List<ResDeliveryCharges> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResDeliveryCharges> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

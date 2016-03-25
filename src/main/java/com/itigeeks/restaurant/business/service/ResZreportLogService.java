@@ -38,4 +38,8 @@ public interface ResZreportLogService {
 	
 	public Integer countAll();
 	
+	public List<ResZreportLog> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResZreportLog> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -38,4 +38,8 @@ public interface ResVoucherExclusionsDAO {
 	
 	public Integer countAll();
 	
+	public List<ResVoucherExclusions> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResVoucherExclusions> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -67,4 +67,15 @@ public class ResLogDAOImpl extends AbstractDAO implements ResLogDAO  , Serializa
 	{
 		return super.countAll(ResLog.class);
 	}
+
+	public List<ResLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResLog.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResLog> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResLog.class , startPage , pageSize);
+	}
+
 }

@@ -38,4 +38,8 @@ public interface ResCustomerAddressService {
 	
 	public Integer countAll();
 	
+	public List<ResCustomerAddress> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCustomerAddress> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

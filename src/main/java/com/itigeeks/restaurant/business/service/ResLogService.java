@@ -38,4 +38,8 @@ public interface ResLogService {
 	
 	public Integer countAll();
 	
+	public List<ResLog> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResLog> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -9,7 +9,6 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.itigeeks.restaurant.business.facade.RestaurantFacade;
@@ -38,11 +37,8 @@ public class Lanucher extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-	    ApplicationContext context = SpringApplication.run(Lanucher.class, "");
-	   LoginController testController = context.getBean(LoginController.class);
-	   stage.setScene(new Scene(testController));
+	   stage.setScene(new Scene(new LoginController()));
 	   stage.show();
-	   
 
 	}
 }

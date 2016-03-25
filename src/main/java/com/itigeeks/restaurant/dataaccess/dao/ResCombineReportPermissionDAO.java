@@ -38,4 +38,8 @@ public interface ResCombineReportPermissionDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCombineReportPermission> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCombineReportPermission> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -67,4 +67,15 @@ public class ResOrderDeleteLogDAOImpl extends AbstractDAO implements ResOrderDel
 	{
 		return super.countAll(ResOrderDeleteLog.class);
 	}
+
+	public List<ResOrderDeleteLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResOrderDeleteLog.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResOrderDeleteLog> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResOrderDeleteLog.class , startPage , pageSize);
+	}
+
 }

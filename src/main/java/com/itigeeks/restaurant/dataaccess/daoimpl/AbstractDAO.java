@@ -12,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.itigeeks.restaurant.common.utils.Utils;
+
 @Repository
-@EnableTransactionManagement 
+@EnableTransactionManagement
 @Transactional
 public class AbstractDAO {
 
@@ -25,12 +27,12 @@ public class AbstractDAO {
 	}
 
 	public void delete(Object entity) {
-		 getCurrentSession().delete(entity);
+		getCurrentSession().delete(entity);
 
 	}
 
 	public Object saveOrUpdate(Object entity) {
-		  getCurrentSession().merge(entity);
+		getCurrentSession().merge(entity);
 		return entity;
 	}
 
@@ -39,35 +41,78 @@ public class AbstractDAO {
 	}
 
 	public List loadAll(Class class1) {
-		Query query = getCurrentSession().createQuery(String.format("select o from %s o", class1.getCanonicalName()) );
-		return query.list();
+		Query query = getCurrentSession().createQuery(
+				String.format("select o from %s o", class1.getCanonicalName()));
+		List result = query.list();
+		return result;
 	}
 
 	public List loadByNamedQuery(String queryName) {
 		Query query = getCurrentSession().getNamedQuery(queryName);
-		return query.list();
+		List result = query.list();
+		return result;
 	}
 
 	public List loadByNamedQuery(String queryName,
 			Map<String, Object> queryParameters) {
 		Query query = getCurrentSession().getNamedQuery(queryName);
-		for(String key : queryParameters.keySet())
-		{
-			query.setParameter(key, queryParameters.get(key));
+		if (queryParameters != null) {
+			for (String key : queryParameters.keySet()) {
+				query.setParameter(key, queryParameters.get(key));
+			}
 		}
-		
-		return query.list();
+
+		List result = query.list();
+		return result;
 	}
 
-	public List search(Class class1, Map<String, Object> criteria) {
-		// TODO Auto-generated method stub
-		return null;
+	public List search(Class class1, Map<String, Object> queryParameters) {
+		Query query = getCurrentSession().createQuery(
+				String.format("select o from %s o", class1.getCanonicalName()));
+		if (queryParameters != null) {
+			for (String key : queryParameters.keySet()) {
+				query.setParameter(key, queryParameters.get(key));
+			}
+		}
+		List result = query.list();
+		return result;
 	}
 
 	public Integer countAll(Class class1) {
-		Query query = getCurrentSession().createQuery(String.format("select count (o) from %s o", class1.getCanonicalName()) );
-		 Integer count = (Integer)query.list().get(0);
-		 return count;
+		Query query = getCurrentSession().createQuery(
+				String.format("select count (o) from %s o",
+						class1.getCanonicalName()));
+		Object obj = Utils.getFirstResult(query.list());
+		if (obj != null) {
+			return ((Long) obj).intValue();
+		}
+		return 0;
+	}
+
+	public List search(Class class1, Map<String, Object> queryParameters,
+			Integer firstPage, Integer pageSize) {
+
+		Query query = getCurrentSession().createQuery(
+				String.format("select o from %s o", class1.getCanonicalName()));
+		if (queryParameters != null) {
+			for (String key : queryParameters.keySet()) {
+				query.setParameter(key, queryParameters.get(key));
+			}
+		}
+		query.setFirstResult(firstPage);
+		query.setFetchSize(pageSize);
+		List result = query.list();
+		return result;
+	}
+
+	public List loadAll(Class class1, Integer startPage, Integer pageSize) {
+		Query query = getCurrentSession().createQuery(
+				String.format("select o from %s o", class1.getCanonicalName()));
+		query.setFirstResult(startPage);
+		System.out.println("*********** start index ********* " + startPage);
+		query.setMaxResults(pageSize);   
+		List result = query.list();
+		return result;
 	}
 
 }

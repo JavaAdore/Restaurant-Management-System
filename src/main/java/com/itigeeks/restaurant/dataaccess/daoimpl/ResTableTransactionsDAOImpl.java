@@ -67,4 +67,15 @@ public class ResTableTransactionsDAOImpl extends AbstractDAO implements ResTable
 	{
 		return super.countAll(ResTableTransactions.class);
 	}
+
+	public List<ResTableTransactions> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResTableTransactions.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResTableTransactions> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResTableTransactions.class , startPage , pageSize);
+	}
+
 }

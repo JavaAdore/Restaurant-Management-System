@@ -38,4 +38,8 @@ public interface ResMessageDAO {
 	
 	public Integer countAll();
 	
+	public List<ResMessage> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResMessage> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

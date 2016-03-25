@@ -67,4 +67,15 @@ public class ResCityDAOImpl extends AbstractDAO implements ResCityDAO  , Seriali
 	{
 		return super.countAll(ResCity.class);
 	}
+
+	public List<ResCity> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCity.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCity> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCity.class , startPage , pageSize);
+	}
+
 }

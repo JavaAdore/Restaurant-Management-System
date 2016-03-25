@@ -67,4 +67,15 @@ public class ResPrepLocationDAOImpl extends AbstractDAO implements ResPrepLocati
 	{
 		return super.countAll(ResPrepLocation.class);
 	}
+
+	public List<ResPrepLocation> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPrepLocation.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPrepLocation> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPrepLocation.class , startPage , pageSize);
+	}
+
 }

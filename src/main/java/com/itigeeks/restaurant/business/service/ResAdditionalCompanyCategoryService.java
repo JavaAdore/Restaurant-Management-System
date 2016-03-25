@@ -38,4 +38,8 @@ public interface ResAdditionalCompanyCategoryService {
 	
 	public Integer countAll();
 	
+	public List<ResAdditionalCompanyCategory> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResAdditionalCompanyCategory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

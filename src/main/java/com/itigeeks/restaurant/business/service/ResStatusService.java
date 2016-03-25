@@ -38,4 +38,8 @@ public interface ResStatusService {
 	
 	public Integer countAll();
 	
+	public List<ResStatus> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResStatus> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

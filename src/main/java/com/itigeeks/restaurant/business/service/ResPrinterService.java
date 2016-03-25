@@ -38,4 +38,8 @@ public interface ResPrinterService {
 	
 	public Integer countAll();
 	
+	public List<ResPrinter> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResPrinter> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

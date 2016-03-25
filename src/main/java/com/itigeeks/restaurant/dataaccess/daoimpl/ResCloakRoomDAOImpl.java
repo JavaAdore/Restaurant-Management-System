@@ -67,4 +67,15 @@ public class ResCloakRoomDAOImpl extends AbstractDAO implements ResCloakRoomDAO 
 	{
 		return super.countAll(ResCloakRoom.class);
 	}
+
+	public List<ResCloakRoom> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCloakRoom.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCloakRoom> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCloakRoom.class , startPage , pageSize);
+	}
+
 }

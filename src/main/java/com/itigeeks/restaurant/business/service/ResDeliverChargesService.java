@@ -38,4 +38,8 @@ public interface ResDeliverChargesService {
 	
 	public Integer countAll();
 	
+	public List<ResDeliverCharges> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDeliverCharges> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

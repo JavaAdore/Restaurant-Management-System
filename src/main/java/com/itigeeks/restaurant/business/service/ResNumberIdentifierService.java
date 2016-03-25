@@ -38,4 +38,8 @@ public interface ResNumberIdentifierService {
 	
 	public Integer countAll();
 	
+	public List<ResNumberIdentifier> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResNumberIdentifier> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

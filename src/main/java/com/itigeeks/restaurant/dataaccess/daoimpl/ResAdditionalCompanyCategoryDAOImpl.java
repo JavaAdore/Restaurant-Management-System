@@ -67,4 +67,15 @@ public class ResAdditionalCompanyCategoryDAOImpl extends AbstractDAO implements 
 	{
 		return super.countAll(ResAdditionalCompanyCategory.class);
 	}
+
+	public List<ResAdditionalCompanyCategory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResAdditionalCompanyCategory.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResAdditionalCompanyCategory> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResAdditionalCompanyCategory.class , startPage , pageSize);
+	}
+
 }

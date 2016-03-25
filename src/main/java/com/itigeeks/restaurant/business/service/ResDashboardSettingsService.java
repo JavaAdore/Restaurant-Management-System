@@ -38,4 +38,8 @@ public interface ResDashboardSettingsService {
 	
 	public Integer countAll();
 	
+	public List<ResDashboardSettings> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDashboardSettings> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

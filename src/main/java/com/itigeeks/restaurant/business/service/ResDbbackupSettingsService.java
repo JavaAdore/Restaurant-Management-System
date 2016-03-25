@@ -38,4 +38,8 @@ public interface ResDbbackupSettingsService {
 	
 	public Integer countAll();
 	
+	public List<ResDbbackupSettings> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDbbackupSettings> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

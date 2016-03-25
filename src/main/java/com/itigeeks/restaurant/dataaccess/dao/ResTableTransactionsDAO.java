@@ -38,4 +38,8 @@ public interface ResTableTransactionsDAO {
 	
 	public Integer countAll();
 	
+	public List<ResTableTransactions> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResTableTransactions> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

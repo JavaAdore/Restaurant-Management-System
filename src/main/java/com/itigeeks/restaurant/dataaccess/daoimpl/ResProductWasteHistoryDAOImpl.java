@@ -67,4 +67,15 @@ public class ResProductWasteHistoryDAOImpl extends AbstractDAO implements ResPro
 	{
 		return super.countAll(ResProductWasteHistory.class);
 	}
+
+	public List<ResProductWasteHistory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResProductWasteHistory.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResProductWasteHistory> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResProductWasteHistory.class , startPage , pageSize);
+	}
+
 }

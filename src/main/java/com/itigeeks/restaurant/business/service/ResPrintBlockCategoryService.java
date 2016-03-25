@@ -38,4 +38,8 @@ public interface ResPrintBlockCategoryService {
 	
 	public Integer countAll();
 	
+	public List<ResPrintBlockCategory> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResPrintBlockCategory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

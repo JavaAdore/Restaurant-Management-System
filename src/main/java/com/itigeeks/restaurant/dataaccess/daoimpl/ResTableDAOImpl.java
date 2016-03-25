@@ -67,4 +67,15 @@ public class ResTableDAOImpl extends AbstractDAO implements ResTableDAO  , Seria
 	{
 		return super.countAll(ResTable.class);
 	}
+
+	public List<ResTable> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResTable.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResTable> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResTable.class , startPage , pageSize);
+	}
+
 }

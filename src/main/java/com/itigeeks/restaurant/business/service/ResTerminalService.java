@@ -38,4 +38,8 @@ public interface ResTerminalService {
 	
 	public Integer countAll();
 	
+	public List<ResTerminal> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResTerminal> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

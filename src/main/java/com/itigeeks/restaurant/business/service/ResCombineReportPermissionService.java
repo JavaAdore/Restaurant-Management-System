@@ -38,4 +38,8 @@ public interface ResCombineReportPermissionService {
 	
 	public Integer countAll();
 	
+	public List<ResCombineReportPermission> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCombineReportPermission> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

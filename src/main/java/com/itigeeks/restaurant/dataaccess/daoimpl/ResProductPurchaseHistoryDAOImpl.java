@@ -67,4 +67,15 @@ public class ResProductPurchaseHistoryDAOImpl extends AbstractDAO implements Res
 	{
 		return super.countAll(ResProductPurchaseHistory.class);
 	}
+
+	public List<ResProductPurchaseHistory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResProductPurchaseHistory.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResProductPurchaseHistory> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResProductPurchaseHistory.class , startPage , pageSize);
+	}
+
 }

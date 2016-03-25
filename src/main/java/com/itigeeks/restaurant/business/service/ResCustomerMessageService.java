@@ -38,4 +38,8 @@ public interface ResCustomerMessageService {
 	
 	public Integer countAll();
 	
+	public List<ResCustomerMessage> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCustomerMessage> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -67,4 +67,15 @@ public class ResFlaggedOccassionTypeDAOImpl extends AbstractDAO implements ResFl
 	{
 		return super.countAll(ResFlaggedOccassionType.class);
 	}
+
+	public List<ResFlaggedOccassionType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResFlaggedOccassionType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResFlaggedOccassionType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResFlaggedOccassionType.class , startPage , pageSize);
+	}
+
 }

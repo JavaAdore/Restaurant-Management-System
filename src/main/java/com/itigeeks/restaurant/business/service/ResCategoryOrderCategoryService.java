@@ -38,4 +38,8 @@ public interface ResCategoryOrderCategoryService {
 	
 	public Integer countAll();
 	
+	public List<ResCategoryOrderCategory> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResCategoryOrderCategory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

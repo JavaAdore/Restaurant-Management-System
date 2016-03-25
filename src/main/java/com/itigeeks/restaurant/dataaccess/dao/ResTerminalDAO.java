@@ -38,4 +38,8 @@ public interface ResTerminalDAO {
 	
 	public Integer countAll();
 	
+	public List<ResTerminal> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResTerminal> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -67,4 +67,15 @@ public class ResCustomerMessageDAOImpl extends AbstractDAO implements ResCustome
 	{
 		return super.countAll(ResCustomerMessage.class);
 	}
+
+	public List<ResCustomerMessage> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCustomerMessage.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCustomerMessage> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCustomerMessage.class , startPage , pageSize);
+	}
+
 }

@@ -67,4 +67,15 @@ public class ResPromotionProductDiscountDAOImpl extends AbstractDAO implements R
 	{
 		return super.countAll(ResPromotionProductDiscount.class);
 	}
+
+	public List<ResPromotionProductDiscount> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPromotionProductDiscount.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPromotionProductDiscount> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPromotionProductDiscount.class , startPage , pageSize);
+	}
+
 }

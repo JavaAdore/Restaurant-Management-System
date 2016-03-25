@@ -38,4 +38,8 @@ public interface ResPrintBlockDAO {
 	
 	public Integer countAll();
 	
+	public List<ResPrintBlock> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResPrintBlock> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

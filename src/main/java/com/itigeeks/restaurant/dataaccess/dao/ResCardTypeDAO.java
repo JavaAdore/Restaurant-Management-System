@@ -38,4 +38,8 @@ public interface ResCardTypeDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCardType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCardType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

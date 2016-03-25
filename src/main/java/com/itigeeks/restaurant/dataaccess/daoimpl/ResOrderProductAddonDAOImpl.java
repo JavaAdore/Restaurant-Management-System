@@ -67,4 +67,15 @@ public class ResOrderProductAddonDAOImpl extends AbstractDAO implements ResOrder
 	{
 		return super.countAll(ResOrderProductAddon.class);
 	}
+
+	public List<ResOrderProductAddon> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResOrderProductAddon.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResOrderProductAddon> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResOrderProductAddon.class , startPage , pageSize);
+	}
+
 }

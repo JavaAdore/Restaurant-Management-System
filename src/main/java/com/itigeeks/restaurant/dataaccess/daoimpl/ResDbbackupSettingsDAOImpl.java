@@ -67,4 +67,15 @@ public class ResDbbackupSettingsDAOImpl extends AbstractDAO implements ResDbback
 	{
 		return super.countAll(ResDbbackupSettings.class);
 	}
+
+	public List<ResDbbackupSettings> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResDbbackupSettings.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResDbbackupSettings> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResDbbackupSettings.class , startPage , pageSize);
+	}
+
 }

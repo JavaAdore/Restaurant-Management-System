@@ -38,4 +38,8 @@ public interface ResModemDAO {
 	
 	public Integer countAll();
 	
+	public List<ResModem> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResModem> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

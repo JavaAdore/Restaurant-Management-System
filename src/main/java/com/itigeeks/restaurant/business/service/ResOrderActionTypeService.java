@@ -38,4 +38,8 @@ public interface ResOrderActionTypeService {
 	
 	public Integer countAll();
 	
+	public List<ResOrderActionType> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResOrderActionType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

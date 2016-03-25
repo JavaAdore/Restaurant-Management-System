@@ -67,4 +67,15 @@ public class ResDocContentDAOImpl extends AbstractDAO implements ResDocContentDA
 	{
 		return super.countAll(ResDocContent.class);
 	}
+
+	public List<ResDocContent> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResDocContent.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResDocContent> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResDocContent.class , startPage , pageSize);
+	}
+
 }

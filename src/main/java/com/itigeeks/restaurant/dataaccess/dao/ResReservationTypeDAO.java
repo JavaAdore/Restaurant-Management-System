@@ -38,4 +38,8 @@ public interface ResReservationTypeDAO {
 	
 	public Integer countAll();
 	
+	public List<ResReservationType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResReservationType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

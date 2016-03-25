@@ -67,4 +67,15 @@ public class ResQuantityTypeDAOImpl extends AbstractDAO implements ResQuantityTy
 	{
 		return super.countAll(ResQuantityType.class);
 	}
+
+	public List<ResQuantityType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResQuantityType.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResQuantityType> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResQuantityType.class , startPage , pageSize);
+	}
+
 }

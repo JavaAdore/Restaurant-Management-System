@@ -38,4 +38,8 @@ public interface ResButtonPermissionSettingsDAO {
 	
 	public Integer countAll();
 	
+	public List<ResButtonPermissionSettings> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResButtonPermissionSettings> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

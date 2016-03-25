@@ -67,4 +67,15 @@ public class ResDashboardSettingsDAOImpl extends AbstractDAO implements ResDashb
 	{
 		return super.countAll(ResDashboardSettings.class);
 	}
+
+	public List<ResDashboardSettings> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResDashboardSettings.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResDashboardSettings> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResDashboardSettings.class , startPage , pageSize);
+	}
+
 }

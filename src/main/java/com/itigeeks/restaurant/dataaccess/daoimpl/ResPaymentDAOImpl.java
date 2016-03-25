@@ -67,4 +67,15 @@ public class ResPaymentDAOImpl extends AbstractDAO implements ResPaymentDAO  , S
 	{
 		return super.countAll(ResPayment.class);
 	}
+
+	public List<ResPayment> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPayment.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPayment> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPayment.class , startPage , pageSize);
+	}
+
 }

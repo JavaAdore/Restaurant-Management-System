@@ -38,4 +38,8 @@ public interface ResPredefinedMessageService {
 	
 	public Integer countAll();
 	
+	public List<ResPredefinedMessage> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResPredefinedMessage> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -38,4 +38,8 @@ public interface ResFlaggedOccassionDAO {
 	
 	public Integer countAll();
 	
+	public List<ResFlaggedOccassion> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResFlaggedOccassion> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

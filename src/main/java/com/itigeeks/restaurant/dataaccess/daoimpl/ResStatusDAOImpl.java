@@ -67,4 +67,15 @@ public class ResStatusDAOImpl extends AbstractDAO implements ResStatusDAO  , Ser
 	{
 		return super.countAll(ResStatus.class);
 	}
+
+	public List<ResStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResStatus.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResStatus> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResStatus.class , startPage , pageSize);
+	}
+
 }

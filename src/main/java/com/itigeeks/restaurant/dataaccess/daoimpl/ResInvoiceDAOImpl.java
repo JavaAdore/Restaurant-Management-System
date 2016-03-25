@@ -67,4 +67,15 @@ public class ResInvoiceDAOImpl extends AbstractDAO implements ResInvoiceDAO  , S
 	{
 		return super.countAll(ResInvoice.class);
 	}
+
+	public List<ResInvoice> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResInvoice.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResInvoice> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResInvoice.class , startPage , pageSize);
+	}
+
 }

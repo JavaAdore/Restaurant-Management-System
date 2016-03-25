@@ -67,4 +67,15 @@ public class ResZreportLogDAOImpl extends AbstractDAO implements ResZreportLogDA
 	{
 		return super.countAll(ResZreportLog.class);
 	}
+
+	public List<ResZreportLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResZreportLog.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResZreportLog> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResZreportLog.class , startPage , pageSize);
+	}
+
 }

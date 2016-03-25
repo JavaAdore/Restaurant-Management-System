@@ -38,4 +38,8 @@ public interface ResDepositTypeService {
 	
 	public Integer countAll();
 	
+	public List<ResDepositType> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResDepositType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

@@ -38,4 +38,8 @@ public interface ResConvertedToTakeAwayDAO {
 	
 	public Integer countAll();
 	
+	public List<ResConvertedToTakeAway> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResConvertedToTakeAway> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

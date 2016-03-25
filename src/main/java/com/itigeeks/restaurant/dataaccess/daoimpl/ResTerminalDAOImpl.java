@@ -67,4 +67,15 @@ public class ResTerminalDAOImpl extends AbstractDAO implements ResTerminalDAO  ,
 	{
 		return super.countAll(ResTerminal.class);
 	}
+
+	public List<ResTerminal> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResTerminal.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResTerminal> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResTerminal.class , startPage , pageSize);
+	}
+
 }

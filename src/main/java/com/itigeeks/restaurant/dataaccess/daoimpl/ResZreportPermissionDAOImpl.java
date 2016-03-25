@@ -67,4 +67,15 @@ public class ResZreportPermissionDAOImpl extends AbstractDAO implements ResZrepo
 	{
 		return super.countAll(ResZreportPermission.class);
 	}
+
+	public List<ResZreportPermission> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResZreportPermission.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResZreportPermission> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResZreportPermission.class , startPage , pageSize);
+	}
+
 }

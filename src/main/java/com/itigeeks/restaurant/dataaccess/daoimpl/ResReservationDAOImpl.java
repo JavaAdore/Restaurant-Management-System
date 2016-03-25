@@ -67,4 +67,15 @@ public class ResReservationDAOImpl extends AbstractDAO implements ResReservation
 	{
 		return super.countAll(ResReservation.class);
 	}
+
+	public List<ResReservation> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResReservation.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResReservation> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResReservation.class , startPage , pageSize);
+	}
+
 }

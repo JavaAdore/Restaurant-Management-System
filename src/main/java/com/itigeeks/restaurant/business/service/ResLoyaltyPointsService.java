@@ -38,4 +38,8 @@ public interface ResLoyaltyPointsService {
 	
 	public Integer countAll();
 	
+	public List<ResLoyaltyPoints> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResLoyaltyPoints> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

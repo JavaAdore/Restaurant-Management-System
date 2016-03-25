@@ -67,4 +67,15 @@ public class ResMessageDAOImpl extends AbstractDAO implements ResMessageDAO  , S
 	{
 		return super.countAll(ResMessage.class);
 	}
+
+	public List<ResMessage> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResMessage.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResMessage> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResMessage.class , startPage , pageSize);
+	}
+
 }

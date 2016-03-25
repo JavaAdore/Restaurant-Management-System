@@ -67,4 +67,15 @@ public class ResUserDAOImpl extends AbstractDAO implements ResUserDAO  , Seriali
 	{
 		return super.countAll(ResUser.class);
 	}
+
+	public List<ResUser> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResUser.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResUser> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResUser.class , startPage , pageSize);
+	}
+
 }

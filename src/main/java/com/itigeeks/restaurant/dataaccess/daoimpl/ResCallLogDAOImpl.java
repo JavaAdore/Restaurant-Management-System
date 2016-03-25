@@ -67,4 +67,15 @@ public class ResCallLogDAOImpl extends AbstractDAO implements ResCallLogDAO  , S
 	{
 		return super.countAll(ResCallLog.class);
 	}
+
+	public List<ResCallLog> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCallLog.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCallLog> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCallLog.class , startPage , pageSize);
+	}
+
 }

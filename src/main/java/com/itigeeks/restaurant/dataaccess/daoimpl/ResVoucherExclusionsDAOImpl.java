@@ -67,4 +67,15 @@ public class ResVoucherExclusionsDAOImpl extends AbstractDAO implements ResVouch
 	{
 		return super.countAll(ResVoucherExclusions.class);
 	}
+
+	public List<ResVoucherExclusions> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResVoucherExclusions.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResVoucherExclusions> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResVoucherExclusions.class , startPage , pageSize);
+	}
+
 }

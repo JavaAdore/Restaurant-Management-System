@@ -67,4 +67,15 @@ public class ResPrintBlockDAOImpl extends AbstractDAO implements ResPrintBlockDA
 	{
 		return super.countAll(ResPrintBlock.class);
 	}
+
+	public List<ResPrintBlock> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPrintBlock.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPrintBlock> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPrintBlock.class , startPage , pageSize);
+	}
+
 }

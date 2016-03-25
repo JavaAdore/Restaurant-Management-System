@@ -38,4 +38,8 @@ public interface ResZreportPermissionService {
 	
 	public Integer countAll();
 	
+	public List<ResZreportPermission> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResZreportPermission> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

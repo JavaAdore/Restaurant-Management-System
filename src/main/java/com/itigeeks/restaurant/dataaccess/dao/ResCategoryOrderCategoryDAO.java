@@ -38,4 +38,8 @@ public interface ResCategoryOrderCategoryDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCategoryOrderCategory> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCategoryOrderCategory> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

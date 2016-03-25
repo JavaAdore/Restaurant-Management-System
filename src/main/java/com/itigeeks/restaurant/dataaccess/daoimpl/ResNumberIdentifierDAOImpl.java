@@ -67,4 +67,15 @@ public class ResNumberIdentifierDAOImpl extends AbstractDAO implements ResNumber
 	{
 		return super.countAll(ResNumberIdentifier.class);
 	}
+
+	public List<ResNumberIdentifier> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResNumberIdentifier.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResNumberIdentifier> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResNumberIdentifier.class , startPage , pageSize);
+	}
+
 }

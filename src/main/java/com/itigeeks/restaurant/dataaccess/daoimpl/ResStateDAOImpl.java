@@ -67,4 +67,15 @@ public class ResStateDAOImpl extends AbstractDAO implements ResStateDAO  , Seria
 	{
 		return super.countAll(ResState.class);
 	}
+
+	public List<ResState> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResState.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResState> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResState.class , startPage , pageSize);
+	}
+
 }

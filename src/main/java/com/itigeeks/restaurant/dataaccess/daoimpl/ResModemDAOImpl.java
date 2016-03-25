@@ -67,4 +67,15 @@ public class ResModemDAOImpl extends AbstractDAO implements ResModemDAO  , Seria
 	{
 		return super.countAll(ResModem.class);
 	}
+
+	public List<ResModem> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResModem.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResModem> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResModem.class , startPage , pageSize);
+	}
+
 }

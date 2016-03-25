@@ -67,4 +67,15 @@ public class ResCountryDAOImpl extends AbstractDAO implements ResCountryDAO  , S
 	{
 		return super.countAll(ResCountry.class);
 	}
+
+	public List<ResCountry> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResCountry.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResCountry> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResCountry.class , startPage , pageSize);
+	}
+
 }

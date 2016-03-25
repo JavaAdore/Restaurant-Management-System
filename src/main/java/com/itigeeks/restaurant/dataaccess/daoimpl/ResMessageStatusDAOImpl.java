@@ -67,4 +67,15 @@ public class ResMessageStatusDAOImpl extends AbstractDAO implements ResMessageSt
 	{
 		return super.countAll(ResMessageStatus.class);
 	}
+
+	public List<ResMessageStatus> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResMessageStatus.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResMessageStatus> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResMessageStatus.class , startPage , pageSize);
+	}
+
 }

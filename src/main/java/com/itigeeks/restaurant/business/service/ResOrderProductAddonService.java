@@ -38,4 +38,8 @@ public interface ResOrderProductAddonService {
 	
 	public Integer countAll();
 	
+	public List<ResOrderProductAddon> search( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+
+	public List<ResOrderProductAddon> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

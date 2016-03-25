@@ -38,4 +38,8 @@ public interface ResCountryDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCountry> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCountry> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

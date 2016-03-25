@@ -67,4 +67,15 @@ public class ResSettingsDAOImpl extends AbstractDAO implements ResSettingsDAO  ,
 	{
 		return super.countAll(ResSettings.class);
 	}
+
+	public List<ResSettings> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResSettings.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResSettings> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResSettings.class , startPage , pageSize);
+	}
+
 }

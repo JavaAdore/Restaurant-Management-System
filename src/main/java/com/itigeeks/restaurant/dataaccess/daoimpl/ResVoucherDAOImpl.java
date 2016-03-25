@@ -67,4 +67,15 @@ public class ResVoucherDAOImpl extends AbstractDAO implements ResVoucherDAO  , S
 	{
 		return super.countAll(ResVoucher.class);
 	}
+
+	public List<ResVoucher> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResVoucher.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResVoucher> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResVoucher.class , startPage , pageSize);
+	}
+
 }

@@ -38,4 +38,8 @@ public interface ResCityDAO {
 	
 	public Integer countAll();
 	
+	public List<ResCity> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResCity> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

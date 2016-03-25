@@ -38,4 +38,8 @@ public interface ResQuantityTypeDAO {
 	
 	public Integer countAll();
 	
+	public List<ResQuantityType> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
+
+	public List<ResQuantityType> loadAll(Integer startPage , Integer pageSize ) ;
+
 }

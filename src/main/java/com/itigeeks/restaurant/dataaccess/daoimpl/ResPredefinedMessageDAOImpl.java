@@ -67,4 +67,15 @@ public class ResPredefinedMessageDAOImpl extends AbstractDAO implements ResPrede
 	{
 		return super.countAll(ResPredefinedMessage.class);
 	}
+
+	public List<ResPredefinedMessage> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResPredefinedMessage.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResPredefinedMessage> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResPredefinedMessage.class , startPage , pageSize);
+	}
+
 }

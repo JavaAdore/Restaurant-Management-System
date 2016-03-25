@@ -67,4 +67,15 @@ public class ResFloorDAOImpl extends AbstractDAO implements ResFloorDAO  , Seria
 	{
 		return super.countAll(ResFloor.class);
 	}
+
+	public List<ResFloor> search( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) 
+	{
+		return super.search( ResFloor.class , criteria ,  firstPage ,  pageSize ); 
+	}
+
+	public List<ResFloor> loadAll(Integer startPage , Integer pageSize )
+	{
+		return super.loadAll( ResFloor.class , startPage , pageSize);
+	}
+
 }
