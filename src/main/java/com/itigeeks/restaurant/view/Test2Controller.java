@@ -17,35 +17,34 @@ import com.itigeeks.restaurant.business.facade.RestaurantFacade;
 @Controller
 public class Test2Controller extends Pane {
 
-	@Autowired
-	private RestaurantFacade restaurantFacade;
+  @Autowired
+  private RestaurantFacade restaurantFacade;
 
-	@FXML
-	private Button myButton;
+  @FXML
+  private Button myButton;
 
-	public Test2Controller() {
+  public Test2Controller() {
 
-		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-					"test2.fxml"));
-			fxmlLoader.setRoot(this);
-			fxmlLoader.setController(this);
-			fxmlLoader.load();
-		} catch (IOException exception) {
-			throw new RuntimeException(exception);
-		}
+    try {
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test2.fxml"));
+      fxmlLoader.setRoot(this);
+      fxmlLoader.setController(this);
+      fxmlLoader.load();
+    } catch (IOException exception) {
+      throw new RuntimeException(exception);
+    }
 
-		assignListeners();
-	}
+    assignListeners();
+  }
 
-	private void assignListeners() {
-		myButton.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent arg0) {
-				restaurantFacade.test();
-			}
+  private void assignListeners() {
+    myButton.setOnAction(new EventHandler<ActionEvent>() {
+      public void handle(ActionEvent arg0) {
+        restaurantFacade.test();
+      }
 
-		});
+    });
 
-	}
+  }
 
 }

@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-	 
-	@Before("execution(* com.itigeeks.restaurant.business.**.**.**(..))")
-	public void logBefore(JoinPoint joinPoint) {
 
-		System.out.println("logBefore() is running!");
-		System.out.println("hijacked : " + joinPoint.getSignature().getName());
-		System.out.println("******");
-	}
+  @Before("execution(* com.itigeeks.restaurant.business.**.**.**(..))")
+  public void logBefore(JoinPoint joinPoint) {
+
+    System.out.println("logBefore() is running!");
+    System.out.println("hijacked : " + joinPoint.getSignature().getName());
+    System.out.println("******");
+  }
 
 }

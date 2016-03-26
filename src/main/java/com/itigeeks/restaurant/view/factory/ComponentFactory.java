@@ -16,67 +16,63 @@ import com.itigeeks.restaurant.view.LoginUserComponent;
 @Controller
 public class ComponentFactory {
 
-	@Autowired
-	private RestaurantFacade restaurantFacade;
+  @Autowired
+  private RestaurantFacade restaurantFacade;
 
-	public List<LoginUserComponent> createLoginUsers(
-			PagingDetailsHolder pagingDetailsHolder, PagingDirection direction) {
+  public List<LoginUserComponent> createLoginUsers(PagingDetailsHolder pagingDetailsHolder,
+      PagingDirection direction) {
 
-		int countOfAllUsers = restaurantFacade.getCountOfAllUsers();
-		
-		if (countOfAllUsers == 0) 
-		{
-			// their is no need to hit the database again and fetch no row
-			return new ArrayList<LoginUserComponent>();
-		}
+    int countOfAllUsers = restaurantFacade.getCountOfAllUsers();
 
-		pagingDetailsHolder.adjustStartResultToMatchDirection(countOfAllUsers,
-				direction);
+    if (countOfAllUsers == 0) {
+      // their is no need to hit the database again and fetch no row
+      return new ArrayList<LoginUserComponent>();
+    }
 
-		List<ResUser> users = restaurantFacade.loadUsers(pagingDetailsHolder,
-				pagingDetailsHolder.getStartResult(),
-				pagingDetailsHolder.getPageSize());
-		
+    pagingDetailsHolder.adjustStartResultToMatchDirection(countOfAllUsers, direction);
 
-		return createLoginUserComponents(users);
+    List<ResUser> users =
+        restaurantFacade.loadUsers(pagingDetailsHolder, pagingDetailsHolder.getStartResult(),
+            pagingDetailsHolder.getPageSize());
 
-	}
 
-	private List<LoginUserComponent> createLoginUserComponents(
-			List<ResUser> users) {
-		List<LoginUserComponent> loginUserComponents = new ArrayList<LoginUserComponent>();
+    return createLoginUserComponents(users);
 
-		for (ResUser resUser : users) {
-			String userName = resUser.getUserName();
-			if (!Utils.isEmptyString(userName)) {
-				LoginUserComponent loginUserComponent = createLoginUserComponent(userName);
-				loginUserComponents.add(loginUserComponent);
-			}
-		}
-		return loginUserComponents;
-	}
+  }
 
-	private LoginUserComponent createLoginUserComponent(String userName) {
-		String[] spillitedUserName = splitUserName(userName);
-		String firstName = spillitedUserName[0];
-		String lastName = spillitedUserName[1];
-		return new LoginUserComponent(firstName, lastName);
-	}
+  private List<LoginUserComponent> createLoginUserComponents(List<ResUser> users) {
+    List<LoginUserComponent> loginUserComponents = new ArrayList<LoginUserComponent>();
 
-	private String[] splitUserName(String userName) {
-		String firstName = "";
-		String lastName = "";
-		int indexOfFirstSpace = userName.indexOf("\\s");
+    for (ResUser resUser : users) {
+      String userName = resUser.getUserName();
+      if (!Utils.isEmptyString(userName)) {
+        LoginUserComponent loginUserComponent = createLoginUserComponent(userName);
+        loginUserComponents.add(loginUserComponent);
+      }
+    }
+    return loginUserComponents;
+  }
 
-		if (indexOfFirstSpace != -1) {
-			firstName = userName.substring(0, indexOfFirstSpace);
-			lastName = userName.substring(indexOfFirstSpace,
-					userName.length() - 1);
-		} else {
-			firstName = userName;
-		}
-		return new String[] { firstName, lastName };
+  private LoginUserComponent createLoginUserComponent(String userName) {
+    String[] spillitedUserName = splitUserName(userName);
+    String firstName = spillitedUserName[0];
+    String lastName = spillitedUserName[1];
+    return new LoginUserComponent(firstName, lastName);
+  }
 
-	}
+  private String[] splitUserName(String userName) {
+    String firstName = "";
+    String lastName = "";
+    int indexOfFirstSpace = userName.indexOf("\\s");
+
+    if (indexOfFirstSpace != -1) {
+      firstName = userName.substring(0, indexOfFirstSpace);
+      lastName = userName.substring(indexOfFirstSpace, userName.length() - 1);
+    } else {
+      firstName = userName;
+    }
+    return new String[] {firstName, lastName};
+
+  }
 
 }

@@ -21,119 +21,115 @@ import com.itigeeks.restaurant.common.utils.BeanFactory;
 import com.itigeeks.restaurant.view.factory.ComponentFactory;
 
 public class LoginController extends AnchorPane {
-	 
-	final private RestaurantFacade restaurantFacade;
-	ComponentFactory componentFactory;
 
-	@FXML
-	private GridPane usersGridPane;
+  final private RestaurantFacade restaurantFacade;
+  ComponentFactory componentFactory;
 
-	@FXML
-	private TextField userNameTextField;
+  @FXML
+  private GridPane usersGridPane;
 
-	@FXML
-	private PasswordField passwordField;
+  @FXML
+  private TextField userNameTextField;
 
-	@FXML
-	private Button nextPageButton;
+  @FXML
+  private PasswordField passwordField;
 
-	@FXML
-	private Button previousPageButton;
+  @FXML
+  private Button nextPageButton;
 
-	PagingDetailsHolder pagingDetailsHolder = new PagingDetailsHolder();
+  @FXML
+  private Button previousPageButton;
 
-	public LoginController() throws IOException {
-		try {
-			restaurantFacade = BeanFactory.getBean(RestaurantFacade.class);
-			componentFactory = BeanFactory.getBean(ComponentFactory.class);
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-					"login.fxml"));
-			fxmlLoader.setRoot(this);
-			fxmlLoader.setController(this);
-			fxmlLoader.load();
-			initializeForm();
-		} catch (Exception ex) {
-			throw new RuntimeException(ex);
-		}
-	}
+  PagingDetailsHolder pagingDetailsHolder = new PagingDetailsHolder();
 
-	private void initializeForm() {
-		loadUsers();
-		assignListeners();
+  public LoginController() throws IOException {
+    try {
+      restaurantFacade = BeanFactory.getBean(RestaurantFacade.class);
+      componentFactory = BeanFactory.getBean(ComponentFactory.class);
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+      fxmlLoader.setRoot(this);
+      fxmlLoader.setController(this);
+      fxmlLoader.load();
+      initializeForm();
+    } catch (Exception ex) {
+      throw new RuntimeException(ex);
+    }
+  }
 
-	}
+  private void initializeForm() {
+    loadUsers();
+    assignListeners();
 
-	private void assignListeners() {
-		previousPageButton.setOnAction(new EventHandler<ActionEvent>() {
+  }
 
-			@Override
-			public void handle(ActionEvent arg0) {
+  private void assignListeners() {
+    previousPageButton.setOnAction(new EventHandler<ActionEvent>() {
 
-				loadUsersPage(PagingDirection.PREVIOUS);
-			}
-		});
-		nextPageButton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent arg0) {
 
-			@Override
-			public void handle(ActionEvent arg0) {
-				loadUsersPage(PagingDirection.NEXT);
+        loadUsersPage(PagingDirection.PREVIOUS);
+      }
+    });
+    nextPageButton.setOnAction(new EventHandler<ActionEvent>() {
 
-			}
-		});
+      @Override
+      public void handle(ActionEvent arg0) {
+        loadUsersPage(PagingDirection.NEXT);
 
-	}
+      }
+    });
 
-	private void loadUsers() {
+  }
 
-		loadUsersPage(PagingDirection.NEXT);
+  private void loadUsers() {
 
-	}
+    loadUsersPage(PagingDirection.NEXT);
 
-	public void loadUsersPage(PagingDirection direction) {
+  }
 
-		List<LoginUserComponent> userLoginComponents = componentFactory
-				.createLoginUsers(pagingDetailsHolder, direction);
-		clearUsersGridPane();
-		int column = 0, row = 0, counter = 0;
-		EventHandler userComponentDefaultListener = getUserComponentDefaultListener();
-		for (LoginUserComponent currentUserComponent : userLoginComponents) {
-			currentUserComponent
-					.setDefaultEventListeners(userComponentDefaultListener);
-			usersGridPane.add(currentUserComponent, column++, row);
-			column = (column > 1) ? 0 : column;
-			counter++;
-			if (counter >= 2) {
-				counter = 0;
-				row++;
-			}
-		}
+  public void loadUsersPage(PagingDirection direction) {
 
-	}
+    List<LoginUserComponent> userLoginComponents =
+        componentFactory.createLoginUsers(pagingDetailsHolder, direction);
+    clearUsersGridPane();
+    int column = 0, row = 0, counter = 0;
+    EventHandler userComponentDefaultListener = getUserComponentDefaultListener();
+    for (LoginUserComponent currentUserComponent : userLoginComponents) {
+      currentUserComponent.setDefaultEventListeners(userComponentDefaultListener);
+      usersGridPane.add(currentUserComponent, column++, row);
+      column = (column > 1) ? 0 : column;
+      counter++;
+      if (counter >= 2) {
+        counter = 0;
+        row++;
+      }
+    }
 
-	private void clearUsersGridPane() {
-		usersGridPane.getChildren().clear();
-	}
+  }
 
-	private EventHandler<Event> getUserComponentDefaultListener() {
-		return new EventHandler<Event>() {
+  private void clearUsersGridPane() {
+    usersGridPane.getChildren().clear();
+  }
 
-			@Override
-			public void handle(Event event) {
+  private EventHandler<Event> getUserComponentDefaultListener() {
+    return new EventHandler<Event>() {
 
-				String userName = ((LoginUserComponent) event.getSource())
-						.getUserName();
-				userNameTextField.setText(userName);
+      @Override
+      public void handle(Event event) {
 
-			}
+        String userName = ((LoginUserComponent) event.getSource()).getUserName();
+        userNameTextField.setText(userName);
 
-		};
-	}
+      }
 
-	public void loadPreviousPage() {
-	}
+    };
+  }
 
-	public static void main(String[] args) {
-		System.out.println(4 % 2);
-	}
+  public void loadPreviousPage() {}
+
+  public static void main(String[] args) {
+    System.out.println(4 % 2);
+  }
 
 }

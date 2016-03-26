@@ -9,47 +9,51 @@ import com.itigeeks.restaurant.common.entity.schema.ResPrintBlockCategory;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResPrintBlockCategoryDAO {
 
 
-	public void delete(ResPrintBlockCategory resPrintBlockCategory) ;
-	
-	public ResPrintBlockCategory saveOrUpdate(ResPrintBlockCategory resPrintBlockCategory) ;
+  public void delete(ResPrintBlockCategory resPrintBlockCategory);
 
-	public ResPrintBlockCategory load(Long id ) ;
+  public ResPrintBlockCategory saveOrUpdate(ResPrintBlockCategory resPrintBlockCategory);
 
-	public List<ResPrintBlockCategory> loadAll() ;
-	
-	public List<ResPrintBlockCategory> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResPrintBlockCategory load(Long id);
 
-	public List<ResPrintBlockCategory> loadByNamedQuery(String queryName) ;
-	
-	public List<ResPrintBlockCategory> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResPrintBlockCategory> load( Map<String, Object> criteria ) ;
-	
-	public List<ResPrintBlockCategory> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResPrintBlockCategory> loadAll();
 
-	public List<ResPrintBlockCategory> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResPrintBlockCategory> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResPrintBlockCategory> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResPrintBlockCategory> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResPrintBlockCategory> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResPrintBlockCategory> loadByNamedQuery(String queryName,
+      Map<String, Object> queryParameters);
+
+  public List<ResPrintBlockCategory> load(Map<String, Object> criteria);
+
+  public List<ResPrintBlockCategory> load(Map<String, Object> criteria,
+      QueryConjunctionType queryConjunctionType);
+
+  public List<ResPrintBlockCategory> load(Map<String, Object> criteria, Integer firstPage,
+      Integer pageSize);
+
+  public List<ResPrintBlockCategory> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, QueryConjunctionType conjuncationType);
+
+  public List<ResPrintBlockCategory> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

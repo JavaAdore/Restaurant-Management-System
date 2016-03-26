@@ -9,47 +9,51 @@ import com.itigeeks.restaurant.common.entity.schema.ResFlaggedOccassionType;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResFlaggedOccassionTypeDAO {
 
 
-	public void delete(ResFlaggedOccassionType resFlaggedOccassionType) ;
-	
-	public ResFlaggedOccassionType saveOrUpdate(ResFlaggedOccassionType resFlaggedOccassionType) ;
+  public void delete(ResFlaggedOccassionType resFlaggedOccassionType);
 
-	public ResFlaggedOccassionType load(Long id ) ;
+  public ResFlaggedOccassionType saveOrUpdate(ResFlaggedOccassionType resFlaggedOccassionType);
 
-	public List<ResFlaggedOccassionType> loadAll() ;
-	
-	public List<ResFlaggedOccassionType> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResFlaggedOccassionType load(Long id);
 
-	public List<ResFlaggedOccassionType> loadByNamedQuery(String queryName) ;
-	
-	public List<ResFlaggedOccassionType> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResFlaggedOccassionType> load( Map<String, Object> criteria ) ;
-	
-	public List<ResFlaggedOccassionType> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResFlaggedOccassionType> loadAll();
 
-	public List<ResFlaggedOccassionType> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResFlaggedOccassionType> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResFlaggedOccassionType> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResFlaggedOccassionType> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResFlaggedOccassionType> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResFlaggedOccassionType> loadByNamedQuery(String queryName,
+      Map<String, Object> queryParameters);
+
+  public List<ResFlaggedOccassionType> load(Map<String, Object> criteria);
+
+  public List<ResFlaggedOccassionType> load(Map<String, Object> criteria,
+      QueryConjunctionType queryConjunctionType);
+
+  public List<ResFlaggedOccassionType> load(Map<String, Object> criteria, Integer firstPage,
+      Integer pageSize);
+
+  public List<ResFlaggedOccassionType> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, QueryConjunctionType conjuncationType);
+
+  public List<ResFlaggedOccassionType> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

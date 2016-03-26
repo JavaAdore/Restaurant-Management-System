@@ -9,47 +9,51 @@ import com.itigeeks.restaurant.common.entity.schema.ResTableTransactions;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResTableTransactionsDAO {
 
 
-	public void delete(ResTableTransactions resTableTransactions) ;
-	
-	public ResTableTransactions saveOrUpdate(ResTableTransactions resTableTransactions) ;
+  public void delete(ResTableTransactions resTableTransactions);
 
-	public ResTableTransactions load(Long id ) ;
+  public ResTableTransactions saveOrUpdate(ResTableTransactions resTableTransactions);
 
-	public List<ResTableTransactions> loadAll() ;
-	
-	public List<ResTableTransactions> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResTableTransactions load(Long id);
 
-	public List<ResTableTransactions> loadByNamedQuery(String queryName) ;
-	
-	public List<ResTableTransactions> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResTableTransactions> load( Map<String, Object> criteria ) ;
-	
-	public List<ResTableTransactions> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResTableTransactions> loadAll();
 
-	public List<ResTableTransactions> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResTableTransactions> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResTableTransactions> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResTableTransactions> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResTableTransactions> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResTableTransactions> loadByNamedQuery(String queryName,
+      Map<String, Object> queryParameters);
+
+  public List<ResTableTransactions> load(Map<String, Object> criteria);
+
+  public List<ResTableTransactions> load(Map<String, Object> criteria,
+      QueryConjunctionType queryConjunctionType);
+
+  public List<ResTableTransactions> load(Map<String, Object> criteria, Integer firstPage,
+      Integer pageSize);
+
+  public List<ResTableTransactions> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, QueryConjunctionType conjuncationType);
+
+  public List<ResTableTransactions> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

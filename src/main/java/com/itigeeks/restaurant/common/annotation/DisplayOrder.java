@@ -6,6 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DisplayOrder {
 
-	public int order() default 0;
-	
+  public int order() default 0;
+
 }

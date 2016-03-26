@@ -9,47 +9,48 @@ import com.itigeeks.restaurant.common.entity.schema.ResMac;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResMacDAO {
 
 
-	public void delete(ResMac resMac) ;
-	
-	public ResMac saveOrUpdate(ResMac resMac) ;
+  public void delete(ResMac resMac);
 
-	public ResMac load(Long id ) ;
+  public ResMac saveOrUpdate(ResMac resMac);
 
-	public List<ResMac> loadAll() ;
-	
-	public List<ResMac> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResMac load(Long id);
 
-	public List<ResMac> loadByNamedQuery(String queryName) ;
-	
-	public List<ResMac> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResMac> load( Map<String, Object> criteria ) ;
-	
-	public List<ResMac> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResMac> loadAll();
 
-	public List<ResMac> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResMac> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResMac> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResMac> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResMac> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResMac> loadByNamedQuery(String queryName, Map<String, Object> queryParameters);
+
+  public List<ResMac> load(Map<String, Object> criteria);
+
+  public List<ResMac> load(Map<String, Object> criteria, QueryConjunctionType queryConjunctionType);
+
+  public List<ResMac> load(Map<String, Object> criteria, Integer firstPage, Integer pageSize);
+
+  public List<ResMac> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,
+      QueryConjunctionType conjuncationType);
+
+  public List<ResMac> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,
+      String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

@@ -11,49 +11,47 @@ import javafx.scene.layout.AnchorPane;
 
 public class LoginUserComponent extends AnchorPane {
 
-	@FXML
-	private ImageView roleImageView;
-	@FXML
-	private Label firstNameLabel;
+  @FXML
+  private ImageView roleImageView;
+  @FXML
+  private Label firstNameLabel;
 
-	@FXML
-	private Label lastNameLabel;
+  @FXML
+  private Label lastNameLabel;
 
-	private String userName = "";
+  private String userName = "";
 
-	public LoginUserComponent() {
+  public LoginUserComponent() {
 
-		this("", "");
-	}
+    this("", "");
+  }
 
-	public LoginUserComponent(String firstName, String lastName) {
-		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-					"loginUserComponent.fxml"));
-			fxmlLoader.setRoot(this);
-			fxmlLoader.setController(this);
-			fxmlLoader.load();
-			setLabelsTextValues(firstName, lastName);
-		} catch (IOException exception) {
-			throw new RuntimeException(exception);
-		}
-	}
+  public LoginUserComponent(String firstName, String lastName) {
+    try {
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginUserComponent.fxml"));
+      fxmlLoader.setRoot(this);
+      fxmlLoader.setController(this);
+      fxmlLoader.load();
+      setLabelsTextValues(firstName, lastName);
+    } catch (IOException exception) {
+      throw new RuntimeException(exception);
+    }
+  }
 
-	private void setLabelsTextValues(String firstName, String lastName) {
-		userName = firstName + " " + lastName;
-		firstNameLabel.setText(firstName);
-		lastNameLabel.setText(lastName);
-	}
+  private void setLabelsTextValues(String firstName, String lastName) {
+    userName = firstName + " " + lastName;
+    firstNameLabel.setText(firstName);
+    lastNameLabel.setText(lastName);
+  }
 
-	public String getUserName() {
-		return userName.trim();
-	}
+  public String getUserName() {
+    return userName.trim();
+  }
 
-	public void setDefaultEventListeners(
-			EventHandler userComponentDefaultListener) {
-		setOnTouchReleased(userComponentDefaultListener);
-		setOnMouseClicked(userComponentDefaultListener);
-		setOnKeyReleased(userComponentDefaultListener);
+  public void setDefaultEventListeners(EventHandler userComponentDefaultListener) {
+    setOnTouchReleased(userComponentDefaultListener);
+    setOnMouseClicked(userComponentDefaultListener);
+    setOnKeyReleased(userComponentDefaultListener);
 
-	}
+  }
 }

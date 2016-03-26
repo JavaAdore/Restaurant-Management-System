@@ -9,47 +9,48 @@ import com.itigeeks.restaurant.common.entity.schema.ResTable;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResTableDAO {
 
 
-	public void delete(ResTable resTable) ;
-	
-	public ResTable saveOrUpdate(ResTable resTable) ;
+  public void delete(ResTable resTable);
 
-	public ResTable load(Long id ) ;
+  public ResTable saveOrUpdate(ResTable resTable);
 
-	public List<ResTable> loadAll() ;
-	
-	public List<ResTable> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResTable load(Long id);
 
-	public List<ResTable> loadByNamedQuery(String queryName) ;
-	
-	public List<ResTable> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResTable> load( Map<String, Object> criteria ) ;
-	
-	public List<ResTable> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResTable> loadAll();
 
-	public List<ResTable> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResTable> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResTable> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResTable> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResTable> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResTable> loadByNamedQuery(String queryName, Map<String, Object> queryParameters);
+
+  public List<ResTable> load(Map<String, Object> criteria);
+
+  public List<ResTable> load(Map<String, Object> criteria, QueryConjunctionType queryConjunctionType);
+
+  public List<ResTable> load(Map<String, Object> criteria, Integer firstPage, Integer pageSize);
+
+  public List<ResTable> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,
+      QueryConjunctionType conjuncationType);
+
+  public List<ResTable> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,
+      String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

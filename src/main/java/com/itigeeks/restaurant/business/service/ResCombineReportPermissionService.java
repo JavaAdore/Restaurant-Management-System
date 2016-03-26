@@ -8,60 +8,66 @@ import org.springframework.stereotype.Service;
 import com.itigeeks.restaurant.common.entity.schema.ResCombineReportPermission;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Service
 public interface ResCombineReportPermissionService {
 
 
-	public void delete(ResCombineReportPermission resCombineReportPermission) ;
-	
-	public ResCombineReportPermission saveOrUpdate(ResCombineReportPermission resCombineReportPermission) ;
+  public void delete(ResCombineReportPermission resCombineReportPermission);
 
-	public ResCombineReportPermission load(Long id ) ;
+  public ResCombineReportPermission saveOrUpdate(
+      ResCombineReportPermission resCombineReportPermission);
 
-	
-	public List<ResCombineReportPermission> loadAll() ;
+  public ResCombineReportPermission load(Long id);
 
 
-	public List<ResCombineReportPermission> loadByNamedQuery(String queryName) ;
+  public List<ResCombineReportPermission> loadAll();
 
-	
-	public List<ResCombineReportPermission> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	
-	public List<ResCombineReportPermission> load( Map<String, Object> criteria ) ;
 
-	
-	public Integer countAll();
+  public List<ResCombineReportPermission> loadByNamedQuery(String queryName);
 
-				
-	public List<ResCombineReportPermission> loadAll(Integer startPage , Integer pageSize ) ;
-	
-	public List<ResCombineReportPermission> load( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
-	
-	public List<ResCombineReportPermission> loadWithAllCriteria( Map<String, Object> criteria  ) ;
-	
-	public List<ResCombineReportPermission> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize  ) ;
-	
-	public List<ResCombineReportPermission> loadWithAllCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
 
-	public List<ResCombineReportPermission> loadWithAnyCriteria( Map<String, Object> criteria  ) ;
-	
-	public List<ResCombineReportPermission> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize ) ;
+  public List<ResCombineReportPermission> loadByNamedQuery(String queryName,
+      Map<String, Object> queryParameters);
 
-	public List<ResCombineReportPermission> loadWithAnyCriteria( Map<String, Object> criteria , Integer startPage , Integer pageSize , String sortField, Boolean ascending ) ;
-	
-	
-	public Integer getCount( Map<String, Object> criteria  ) ;
 
-	public Integer getCountOfAllCriteria( Map<String, Object> criteria  ) ;
+  public List<ResCombineReportPermission> load(Map<String, Object> criteria);
 
-	public Integer getCountOfWithAnyCriteria( Map<String, Object> criteria  ) ;
 
+  public Integer countAll();
+
+
+  public List<ResCombineReportPermission> loadAll(Integer startPage, Integer pageSize);
+
+  public List<ResCombineReportPermission> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize);
+
+  public List<ResCombineReportPermission> loadWithAllCriteria(Map<String, Object> criteria);
+
+  public List<ResCombineReportPermission> loadWithAllCriteria(Map<String, Object> criteria,
+      Integer startPage, Integer pageSize);
+
+  public List<ResCombineReportPermission> loadWithAllCriteria(Map<String, Object> criteria,
+      Integer startPage, Integer pageSize, String sortField, Boolean ascending);
+
+  public List<ResCombineReportPermission> loadWithAnyCriteria(Map<String, Object> criteria);
+
+  public List<ResCombineReportPermission> loadWithAnyCriteria(Map<String, Object> criteria,
+      Integer startPage, Integer pageSize);
+
+  public List<ResCombineReportPermission> loadWithAnyCriteria(Map<String, Object> criteria,
+      Integer startPage, Integer pageSize, String sortField, Boolean ascending);
+
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCountOfAllCriteria(Map<String, Object> criteria);
+
+  public Integer getCountOfWithAnyCriteria(Map<String, Object> criteria);
 
 
 

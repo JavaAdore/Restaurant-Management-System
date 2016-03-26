@@ -18,27 +18,26 @@ import com.itigeeks.restaurant.view.CustomerListController;
 @EnableAspectJAutoProxy
 public class Lanucher extends Application {
 
-	@Autowired
-	private RestaurantFacade restaurantFacade;
+  @Autowired
+  private RestaurantFacade restaurantFacade;
 
 
-	@PostConstruct
-	public void init() {
-	}
+  @PostConstruct
+  public void init() {}
 
-	public void test() {
-	   
-	}
+  public void test() {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Lanucher.class, args);
-		launch(args);
-	} 
+  }
 
-	@Override
-	public void start(Stage stage) throws Exception {
-	   stage.setScene(new Scene(new CustomerListController()));
-	   stage.show();
+  public static void main(String[] args) {
+    SpringApplication.run(Lanucher.class, args);
+    launch(args);
+  }
 
-	}
+  @Override
+  public void start(Stage stage) throws Exception {
+    stage.setScene(new Scene(new CustomerListController()));
+    stage.show();
+
+  }
 }

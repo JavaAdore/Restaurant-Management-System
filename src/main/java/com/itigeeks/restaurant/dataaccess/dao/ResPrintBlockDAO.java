@@ -9,47 +9,49 @@ import com.itigeeks.restaurant.common.entity.schema.ResPrintBlock;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResPrintBlockDAO {
 
 
-	public void delete(ResPrintBlock resPrintBlock) ;
-	
-	public ResPrintBlock saveOrUpdate(ResPrintBlock resPrintBlock) ;
+  public void delete(ResPrintBlock resPrintBlock);
 
-	public ResPrintBlock load(Long id ) ;
+  public ResPrintBlock saveOrUpdate(ResPrintBlock resPrintBlock);
 
-	public List<ResPrintBlock> loadAll() ;
-	
-	public List<ResPrintBlock> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResPrintBlock load(Long id);
 
-	public List<ResPrintBlock> loadByNamedQuery(String queryName) ;
-	
-	public List<ResPrintBlock> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResPrintBlock> load( Map<String, Object> criteria ) ;
-	
-	public List<ResPrintBlock> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResPrintBlock> loadAll();
 
-	public List<ResPrintBlock> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResPrintBlock> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResPrintBlock> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResPrintBlock> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResPrintBlock> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResPrintBlock> loadByNamedQuery(String queryName, Map<String, Object> queryParameters);
+
+  public List<ResPrintBlock> load(Map<String, Object> criteria);
+
+  public List<ResPrintBlock> load(Map<String, Object> criteria,
+      QueryConjunctionType queryConjunctionType);
+
+  public List<ResPrintBlock> load(Map<String, Object> criteria, Integer firstPage, Integer pageSize);
+
+  public List<ResPrintBlock> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, QueryConjunctionType conjuncationType);
+
+  public List<ResPrintBlock> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

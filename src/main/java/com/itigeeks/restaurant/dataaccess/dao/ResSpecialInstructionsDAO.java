@@ -9,47 +9,51 @@ import com.itigeeks.restaurant.common.entity.schema.ResSpecialInstructions;
 import com.itigeeks.restaurant.common.enums.QueryConjunctionType;
 
 /**
- *
- * @author  ITI GEEKS
- *
+ * 
+ * @author ITI GEEKS
+ * 
  */
 
 @Repository
 public interface ResSpecialInstructionsDAO {
 
 
-	public void delete(ResSpecialInstructions resSpecialInstructions) ;
-	
-	public ResSpecialInstructions saveOrUpdate(ResSpecialInstructions resSpecialInstructions) ;
+  public void delete(ResSpecialInstructions resSpecialInstructions);
 
-	public ResSpecialInstructions load(Long id ) ;
+  public ResSpecialInstructions saveOrUpdate(ResSpecialInstructions resSpecialInstructions);
 
-	public List<ResSpecialInstructions> loadAll() ;
-	
-	public List<ResSpecialInstructions> loadAll(Integer startPage , Integer pageSize ) ;
+  public ResSpecialInstructions load(Long id);
 
-	public List<ResSpecialInstructions> loadByNamedQuery(String queryName) ;
-	
-	public List<ResSpecialInstructions> loadByNamedQuery(String queryName, Map<String, Object> queryParameters) ;
-	
-	public List<ResSpecialInstructions> load( Map<String, Object> criteria ) ;
-	
-	public List<ResSpecialInstructions> load(Map<String, Object> criteria,QueryConjunctionType queryConjunctionType);
+  public List<ResSpecialInstructions> loadAll();
 
-	public List<ResSpecialInstructions> load( Map<String, Object> criteria , Integer firstPage , Integer pageSize ) ;
-	
-	public List<ResSpecialInstructions> load( Map<String, Object> criteria , Integer startPage , Integer pageSize , QueryConjunctionType conjuncationType) ;
+  public List<ResSpecialInstructions> loadAll(Integer startPage, Integer pageSize);
 
-	public List<ResSpecialInstructions> load(Map<String, Object> criteria,Integer startPage, Integer pageSize, String sortField,Boolean ascending, QueryConjunctionType conjuncationType);
-		
-	
-	public Integer countAll();
+  public List<ResSpecialInstructions> loadByNamedQuery(String queryName);
 
-	public Integer getCount(Map<String, Object> criteria);
-			
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType);
-	
+  public List<ResSpecialInstructions> loadByNamedQuery(String queryName,
+      Map<String, Object> queryParameters);
+
+  public List<ResSpecialInstructions> load(Map<String, Object> criteria);
+
+  public List<ResSpecialInstructions> load(Map<String, Object> criteria,
+      QueryConjunctionType queryConjunctionType);
+
+  public List<ResSpecialInstructions> load(Map<String, Object> criteria, Integer firstPage,
+      Integer pageSize);
+
+  public List<ResSpecialInstructions> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, QueryConjunctionType conjuncationType);
+
+  public List<ResSpecialInstructions> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, String sortField, Boolean ascending, QueryConjunctionType conjuncationType);
 
 
-	
+  public Integer countAll();
+
+  public Integer getCount(Map<String, Object> criteria);
+
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType);
+
+
+
 }

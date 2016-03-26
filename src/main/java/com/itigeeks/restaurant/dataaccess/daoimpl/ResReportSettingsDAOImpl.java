@@ -16,110 +16,105 @@ import com.itigeeks.restaurant.dataaccess.dao.ResReportSettingsDAO;
  * 
  * 
  * @author ITI GEEKS
- *
+ * 
  */
 @Repository
-public class ResReportSettingsDAOImpl extends AbstractDAO implements ResReportSettingsDAO  , Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
-	public void delete(ResReportSettings resReportSettings) 
-	{
-		super.delete(resReportSettings);
-	}
-	
-	public ResReportSettings saveOrUpdate(ResReportSettings resReportSettings) 
-	{
-		return (ResReportSettings) super.saveOrUpdate(resReportSettings);
-	}
+public class ResReportSettingsDAOImpl extends AbstractDAO implements ResReportSettingsDAO,
+    Serializable {
 
-	public ResReportSettings load(Long id )
-	{
-		return (ResReportSettings) super.get(ResReportSettings.class , id);
-	}
+  private static final long serialVersionUID = 1L;
 
-	
-	public List<ResReportSettings> loadAll()
-	{
-		return (List<ResReportSettings>) super.loadAll(ResReportSettings.class);
-	}
+  public void delete(ResReportSettings resReportSettings) {
+    super.delete(resReportSettings);
+  }
+
+  public ResReportSettings saveOrUpdate(ResReportSettings resReportSettings) {
+    return (ResReportSettings) super.saveOrUpdate(resReportSettings);
+  }
+
+  public ResReportSettings load(Long id) {
+    return (ResReportSettings) super.get(ResReportSettings.class, id);
+  }
 
 
-	public List<ResReportSettings> loadByNamedQuery(String queryName)
-	{
-		
-		return (List<ResReportSettings>) super.loadByNamedQuery(queryName);
-	}
-
-	
-	public List<ResReportSettings> loadByNamedQuery(String queryName, Map<String, Object> queryParameters)
-	{
-		return (List<ResReportSettings>) super.loadByNamedQuery( queryName, queryParameters);
-	}
-	
-	
-
-	
-	public Integer countAll()
-	{
-		return super.countAll(ResReportSettings.class);
-	}
-
-	
-
-	public List<ResReportSettings> loadAll(Integer startPage , Integer pageSize )
-	{
-		return super.loadAll( ResReportSettings.class , startPage , pageSize);
-	}
-	
-	
-	
-	
-
-	@Override
-	public List<ResReportSettings> load(Map<String, Object> criteria) {
-		return this.load(criteria , QueryConjunctionType.AND);
-	}
-
-	@Override
-	public List<ResReportSettings> load(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
-			
-			return (List<ResReportSettings>) super.load(ResReportSettings.class , criteria ,  conjuncationType );
-	}
-
-	@Override
-	public List<ResReportSettings> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,QueryConjunctionType conjuncationType) {
-		
-		return this.load( criteria,  startPage,  pageSize,null , null, conjuncationType);
-	}
-	
-
-	@Override
-	public List<ResReportSettings> load(Map<String, Object> criteria, Integer startPage,Integer pageSize) {
-			
-		return this.load( criteria,  startPage,  pageSize,null , null, QueryConjunctionType.AND);
-
-	}
-
-	@Override
-	public List<ResReportSettings> load(Map<String, Object> criteria, Integer startPage, Integer pageSize,String sortField, Boolean ascending,QueryConjunctionType conjuncationType) {
-			
-		return (List<ResReportSettings>) super.load(ResReportSettings.class , criteria , startPage , pageSize ,  sortField , ascending ,  conjuncationType );
-	}
-
-	
-	@Override
-	public Integer getCount(Map<String, Object> criteria) {
-			return this.getCount(criteria ,QueryConjunctionType.AND );
-	}
-
-	@Override
-	public Integer getCount(Map<String, Object> criteria,QueryConjunctionType conjuncationType) {
-		return super.getCount(ResReportSettings.class  , criteria ,conjuncationType) ;
-	}
-			
+  public List<ResReportSettings> loadAll() {
+    return (List<ResReportSettings>) super.loadAll(ResReportSettings.class);
+  }
 
 
-	
+  public List<ResReportSettings> loadByNamedQuery(String queryName) {
+
+    return (List<ResReportSettings>) super.loadByNamedQuery(queryName);
+  }
+
+
+  public List<ResReportSettings> loadByNamedQuery(String queryName,
+      Map<String, Object> queryParameters) {
+    return (List<ResReportSettings>) super.loadByNamedQuery(queryName, queryParameters);
+  }
+
+
+
+  public Integer countAll() {
+    return super.countAll(ResReportSettings.class);
+  }
+
+
+
+  public List<ResReportSettings> loadAll(Integer startPage, Integer pageSize) {
+    return super.loadAll(ResReportSettings.class, startPage, pageSize);
+  }
+
+
+
+  @Override
+  public List<ResReportSettings> load(Map<String, Object> criteria) {
+    return this.load(criteria, QueryConjunctionType.AND);
+  }
+
+  @Override
+  public List<ResReportSettings> load(Map<String, Object> criteria,
+      QueryConjunctionType conjuncationType) {
+
+    return (List<ResReportSettings>) super
+        .load(ResReportSettings.class, criteria, conjuncationType);
+  }
+
+  @Override
+  public List<ResReportSettings> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, QueryConjunctionType conjuncationType) {
+
+    return this.load(criteria, startPage, pageSize, null, null, conjuncationType);
+  }
+
+
+  @Override
+  public List<ResReportSettings> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize) {
+
+    return this.load(criteria, startPage, pageSize, null, null, QueryConjunctionType.AND);
+
+  }
+
+  @Override
+  public List<ResReportSettings> load(Map<String, Object> criteria, Integer startPage,
+      Integer pageSize, String sortField, Boolean ascending, QueryConjunctionType conjuncationType) {
+
+    return (List<ResReportSettings>) super.load(ResReportSettings.class, criteria, startPage,
+        pageSize, sortField, ascending, conjuncationType);
+  }
+
+
+  @Override
+  public Integer getCount(Map<String, Object> criteria) {
+    return this.getCount(criteria, QueryConjunctionType.AND);
+  }
+
+  @Override
+  public Integer getCount(Map<String, Object> criteria, QueryConjunctionType conjuncationType) {
+    return super.getCount(ResReportSettings.class, criteria, conjuncationType);
+  }
+
+
 
 }
