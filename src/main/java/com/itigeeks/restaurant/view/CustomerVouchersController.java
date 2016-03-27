@@ -66,6 +66,7 @@ public class CustomerVouchersController extends AnchorPane {
 
 
   PagingDetailsHolder paginDetailsHolder = new PagingDetailsHolder();
+  private  EventHandler<ActionEvent> defaultEventHandler = null;
 
 
 
@@ -100,11 +101,11 @@ public class CustomerVouchersController extends AnchorPane {
 
 
   private void initializeVoucherTableView() {
-    FXUtilities.generateTableColumn(ResVoucher.class, new String[] {"voucherNumber", "value",
+    List<TableColumn> tableColumns= FXUtilities.generateTableColumn(ResVoucher.class, new String[] {"voucherNumber", "value",
         "validFrom", "validTill"});
 
-
-
+    vouchersDataTable.getColumns().clear();
+    vouchersDataTable.getColumns().addAll(tableColumns);
   }
 
 
@@ -144,7 +145,6 @@ public class CustomerVouchersController extends AnchorPane {
     getChildren().add(new CustomerDetailsController(currentCustomer));
   }
 
-  private static EventHandler<ActionEvent> defaultEventHandler = null;
 
   private EventHandler<ActionEvent> getDefaultFormEventHandler() {
     if (defaultEventHandler == null) {
@@ -154,28 +154,28 @@ public class CustomerVouchersController extends AnchorPane {
         public void handle(ActionEvent event) {
 
           Object source = event.getSource();
-          if (source == voucherDatePicker) {
+          if (source.equals(voucherDatePicker)) {
             LocalDate localeDate = ((DatePicker) event.getSource()).getValue();
             startDate = FXUtilities.localeDateToDate(localeDate);
-            endDate = startDate;
+             endDate = startDate;
             paginDetailsHolder = new PagingDetailsHolder();
             loadVouchers();
 
-          } else if (source == nextPageButton) {
+          } else if (source.equals(nextPageButton)) {
             loadNextVoucherPage();
-          } else if (source == previousPageButton) {
+          } else if (source.equals(previousPageButton)) {
             loadPreviousVoucherPage();
-          } else if (source == lastMonthButton) {
+          } else if (source.equals(lastMonthButton)) {
             startDate = Utils.getLastMonthFirstDay();
             endDate = Utils.getLastMonthLastDay();
             paginDetailsHolder = new PagingDetailsHolder();
             loadVouchers();
-          } else if (source == lastWeekButton) {
+          } else if (source.equals(lastWeekButton)) {
             startDate = Utils.getLastWeekFirstDay();
             endDate = Utils.getLastWeekLastDay();
             paginDetailsHolder = new PagingDetailsHolder();
             loadVouchers();
-          } else if (source == showAllButton) {
+          } else if (source.equals(showAllButton)) {
             loadAllVouchers();
           }
         }

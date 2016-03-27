@@ -55,8 +55,13 @@ public class CustomerDetailsController extends AnchorPane {
 
   @FXML
   private AnchorPane voucherAnchorPane;
+  
+  @FXML
+  private Button closeButton;
+  
+  
 
-  private static EventHandler anchorPanesDefaultHandler = null;
+  private  EventHandler anchorPanesDefaultHandler = null;
 
 
 
@@ -100,9 +105,31 @@ public class CustomerDetailsController extends AnchorPane {
 
   private void assignListeners() {
     assignVocherAnchorPaneListener();
+    assignCloseButtonListener();
 
   }
 
+
+
+  private void assignCloseButtonListener() {
+    closeButton.setOnAction(new EventHandler()
+    {
+
+      @Override
+      public void handle(Event arg0) {
+       loadCustomersListView(); 
+      }
+      
+    });
+    
+  }
+
+
+  protected void loadCustomersListView() {
+    getChildren().clear();
+    getChildren().add(new CustomerListController());
+    
+  }
 
 
   private void assignVocherAnchorPaneListener() {
