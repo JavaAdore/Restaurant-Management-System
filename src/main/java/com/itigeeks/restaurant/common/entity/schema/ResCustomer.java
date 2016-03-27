@@ -177,6 +177,11 @@ public class ResCustomer extends AbstractEntity implements Serializable {
     super();
   }
 
+  public ResCustomer(Long id) {
+    super();
+    this.id = id;
+  }
+
   // ----------------------------------------------------------------------
   // GETTER & SETTER FOR THE KEY FIELD
   // ----------------------------------------------------------------------

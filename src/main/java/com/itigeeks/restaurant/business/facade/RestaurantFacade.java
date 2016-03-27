@@ -35,5 +35,7 @@ public interface RestaurantFacade extends Serializable {
   public List<ResVoucher> loadVouchers(ResCustomer currentCustomer,
       PagingDetailsHolder paginDetailsHolder, PagingDirection pagingDirection);
 
+  public ResCustomer saveOrUpdate(ResCustomer currentCustomer);
+
 
 }

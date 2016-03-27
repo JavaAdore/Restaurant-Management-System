@@ -55,6 +55,7 @@ public class CustomerVouchersController extends AnchorPane {
   @FXML
   private AnchorPane closeAnchorPane;
 
+
   @FXML
   private TableView vouchersDataTable;
 
@@ -66,7 +67,7 @@ public class CustomerVouchersController extends AnchorPane {
 
 
   PagingDetailsHolder paginDetailsHolder = new PagingDetailsHolder();
-  private  EventHandler<ActionEvent> defaultEventHandler = null;
+  private EventHandler<ActionEvent> defaultEventHandler = null;
 
 
 
@@ -101,8 +102,9 @@ public class CustomerVouchersController extends AnchorPane {
 
 
   private void initializeVoucherTableView() {
-    List<TableColumn> tableColumns= FXUtilities.generateTableColumn(ResVoucher.class, new String[] {"voucherNumber", "value",
-        "validFrom", "validTill"});
+    List<TableColumn> tableColumns =
+        FXUtilities.generateTableColumn(ResVoucher.class, new String[] {"voucherNumber", "value",
+            "validFrom", "validTill"});
 
     vouchersDataTable.getColumns().clear();
     vouchersDataTable.getColumns().addAll(tableColumns);
@@ -124,13 +126,18 @@ public class CustomerVouchersController extends AnchorPane {
 
   }
 
+  
+
+
+
+
   private void assignCloseButtonListener() {
     EventHandler eventHandler = (new EventHandler() {
 
       @Override
       public void handle(Event event) {
         loadCustomerDetailsForm();
- 
+
       }
     });
 
@@ -157,7 +164,7 @@ public class CustomerVouchersController extends AnchorPane {
           if (source.equals(voucherDatePicker)) {
             LocalDate localeDate = ((DatePicker) event.getSource()).getValue();
             startDate = FXUtilities.localeDateToDate(localeDate);
-             endDate = startDate;
+            endDate = startDate;
             paginDetailsHolder = new PagingDetailsHolder();
             loadVouchers();
 

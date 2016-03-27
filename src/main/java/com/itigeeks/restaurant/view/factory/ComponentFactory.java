@@ -46,33 +46,18 @@ public class ComponentFactory {
     for (ResUser resUser : users) {
       String userName = resUser.getUserName();
       if (!Utils.isEmptyString(userName)) {
-        LoginUserComponent loginUserComponent = createLoginUserComponent(userName);
+        LoginUserComponent loginUserComponent = createLoginUserComponent(resUser);
         loginUserComponents.add(loginUserComponent);
       }
     }
     return loginUserComponents;
   }
 
-  private LoginUserComponent createLoginUserComponent(String userName) {
-    String[] spillitedUserName = splitUserName(userName);
-    String firstName = spillitedUserName[0];
-    String lastName = spillitedUserName[1];
-    return new LoginUserComponent(firstName, lastName);
+  private LoginUserComponent createLoginUserComponent(ResUser resUser) {
+ 
+    return new LoginUserComponent(resUser);
   }
 
-  private String[] splitUserName(String userName) {
-    String firstName = "";
-    String lastName = "";
-    int indexOfFirstSpace = userName.indexOf("\\s");
-
-    if (indexOfFirstSpace != -1) {
-      firstName = userName.substring(0, indexOfFirstSpace);
-      lastName = userName.substring(indexOfFirstSpace, userName.length() - 1);
-    } else {
-      firstName = userName;
-    }
-    return new String[] {firstName, lastName};
-
-  }
+ 
 
 }

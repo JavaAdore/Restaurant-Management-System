@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -119,6 +121,12 @@ public class RestaurantFacadeImpl implements RestaurantFacade {
     List<ResVoucher> vouchers = resVoucherService.loadWithAllCriteria(criteria, paginDetailsHolder.getStartResult(), paginDetailsHolder.getPageSize());
     
     return vouchers;
+  }
+
+  @Transactional
+  @Override
+  public ResCustomer saveOrUpdate(ResCustomer currentCustomer) {
+    return resCustomerService.saveOrUpdate(currentCustomer);
   }
 
   

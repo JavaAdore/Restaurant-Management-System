@@ -2,6 +2,8 @@ package com.itigeeks.restaurant.view;
 
 import java.io.IOException;
 
+import com.itigeeks.restaurant.common.entity.schema.ResUser;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,20 +25,35 @@ public class LoginUserComponent extends AnchorPane {
 
   public LoginUserComponent() {
 
-    this("", "");
+    
   }
 
-  public LoginUserComponent(String firstName, String lastName) {
+ 
+
+  public LoginUserComponent(ResUser resUser) {
     try {
       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginUserComponent.fxml"));
       fxmlLoader.setRoot(this);
       fxmlLoader.setController(this);
       fxmlLoader.load();
-      setLabelsTextValues(firstName, lastName);
+      String[] spilletedUserName =  splitUserName(resUser.getUserName());
+      setLabelsTextValues(spilletedUserName[0], spilletedUserName[1]);
+      styleComponent(resUser);
     } catch (IOException exception) {
       throw new RuntimeException(exception);
     }
   }
+
+  private void styleComponent(ResUser resUser) {
+   
+//    if()
+//    {
+//    setStyle(arg0);
+//    }
+    
+  }
+
+
 
   private void setLabelsTextValues(String firstName, String lastName) {
     userName = firstName + " " + lastName;
@@ -52,6 +69,22 @@ public class LoginUserComponent extends AnchorPane {
     setOnTouchReleased(userComponentDefaultListener);
     setOnMouseClicked(userComponentDefaultListener);
     setOnKeyReleased(userComponentDefaultListener);
+
+  }
+  
+  
+  private String[] splitUserName(String userName) {
+    String firstName = "";
+    String lastName = "";
+    int indexOfFirstSpace = userName.indexOf("\\s");
+
+    if (indexOfFirstSpace != -1) {
+      firstName = userName.substring(0, indexOfFirstSpace);
+      lastName = userName.substring(indexOfFirstSpace, userName.length() - 1);
+    } else {
+      firstName = userName;
+    }
+    return new String[] {firstName, lastName};
 
   }
 }

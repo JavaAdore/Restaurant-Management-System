@@ -37,6 +37,9 @@ public class CustomerListController extends AnchorPane {
   private TextField customerSearchTextFeild;
 
   @FXML
+  private Button addNewCustomerButton;
+
+  @FXML
   private TableView customersTableView;
 
   PagingDetailsHolder pagingDetailsHolder = new PagingDetailsHolder();
@@ -67,6 +70,7 @@ public class CustomerListController extends AnchorPane {
 
     assignListeners();
     initializeCustomerDataTable();
+    loadNextCustomersPage();
 
   }
 
@@ -124,6 +128,20 @@ public class CustomerListController extends AnchorPane {
     assignNextPageListener();
     assignPreviousPageListener();
     assignCustomerSearchTextFieldListener();
+    assignAddNewCustomerListener();
+
+  }
+
+  private void assignAddNewCustomerListener() {
+    addNewCustomerButton.setOnAction(new EventHandler<ActionEvent>() {
+
+      @Override
+      public void handle(ActionEvent arg0) {
+
+        displayCustomerDetailsForm(new ResCustomer());
+
+      }
+    });
 
   }
 

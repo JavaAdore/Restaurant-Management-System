@@ -59,6 +59,8 @@ public class CustomerDetailsController extends AnchorPane {
   @FXML
   private Button closeButton;
   
+  @FXML
+  private AnchorPane saveOrUpdatePane;
   
 
   private  EventHandler anchorPanesDefaultHandler = null;
@@ -66,6 +68,7 @@ public class CustomerDetailsController extends AnchorPane {
 
 
   private ResCustomer currentCustomer = null;
+  private RestaurantFacade restaurantFacade;
 
 
 
@@ -75,7 +78,7 @@ public class CustomerDetailsController extends AnchorPane {
   public CustomerDetailsController(ResCustomer regCustomer) {
     try {
       this.currentCustomer = regCustomer;
-
+      restaurantFacade = BeanFactory.getBean(RestaurantFacade.class);
       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewCustomer.fxml"));
 
       fxmlLoader.setRoot(this);
@@ -106,8 +109,41 @@ public class CustomerDetailsController extends AnchorPane {
   private void assignListeners() {
     assignVocherAnchorPaneListener();
     assignCloseButtonListener();
+    assignSaveOrUpdateListener();
 
   }
+
+  
+  private void assignSaveOrUpdateListener() {
+
+    EventHandler eventHandler = new EventHandler() {
+
+      @Override
+      public void handle(Event event) {
+        saveOrUpdateCurrentCustomer();
+
+      }
+
+    };
+
+    saveOrUpdatePane.setOnTouchReleased(eventHandler);
+    saveOrUpdatePane.setOnMouseClicked(eventHandler);
+    saveOrUpdatePane.setOnKeyReleased(eventHandler);
+
+  }
+
+  
+  protected void saveOrUpdateCurrentCustomer() {
+  
+    try {
+      currentCustomer = restaurantFacade.saveOrUpdate(currentCustomer);
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+
+
+  }
+
 
 
 

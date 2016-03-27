@@ -13,6 +13,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.itigeeks.restaurant.business.facade.RestaurantFacade;
 import com.itigeeks.restaurant.view.CustomerListController;
+import com.itigeeks.restaurant.view.LoginController;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
@@ -36,7 +37,7 @@ public class Lanucher extends Application {
 
   @Override
   public void start(Stage stage) throws Exception {
-    stage.setScene(new Scene(new CustomerListController()));
+    stage.setScene(new Scene(new LoginController()));
     stage.show();
 
   }
