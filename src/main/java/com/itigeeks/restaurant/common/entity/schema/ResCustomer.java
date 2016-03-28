@@ -65,7 +65,7 @@ public class ResCustomer extends AbstractEntity implements Serializable {
   @Column(name = "customer_name", nullable = false, length = 50)
   private String customerName;
 
-  @Column(name = "house_no", length = 150)
+  @Column(name = "house_no", length = 4)
   private String houseNo;
 
   @Column(name = "house_name", length = 150)

@@ -37,7 +37,7 @@ public class Lanucher extends Application {
 
   @Override
   public void start(Stage stage) throws Exception {
-    stage.setScene(new Scene(new LoginController()));
+    stage.setScene(new Scene(new CustomerListController()));
     stage.show();
 
   }

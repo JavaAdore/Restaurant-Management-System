@@ -14,6 +14,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -31,9 +32,9 @@ import com.itigeeks.restaurant.view.utils.FXUtilities;
 public class CustomerDetailsController extends AnchorPane {
 
   @FXML
-  private TextField userNameTextField;
+  private TextField customerNameTextField;
   @FXML
-  private TextField houseNumberTextField;
+  private TextField houseNoTextField;
   @FXML
   private TextField houseNameTextField;
   @FXML
@@ -43,7 +44,7 @@ public class CustomerDetailsController extends AnchorPane {
   @FXML
   private TextField streetTextField;
   @FXML
-  private TextField postalCodeTextField;
+  private TextField postCodeTextField;
   @FXML
   private TextField emailTextField;
   @FXML
@@ -61,7 +62,9 @@ public class CustomerDetailsController extends AnchorPane {
   
   @FXML
   private AnchorPane saveOrUpdatePane;
-  
+ 
+  Node [] inputNodes = null;
+
 
   private  EventHandler anchorPanesDefaultHandler = null;
 
@@ -86,34 +89,46 @@ public class CustomerDetailsController extends AnchorPane {
       fxmlLoader.setController(this);
 
       fxmlLoader.load();
-
+      
       initializeForm();
 
     } catch (Exception ex) {
       throw new RuntimeException(ex);
     }
   }
-
+ 
 
   private void initializeForm() {
 
-
     loadCustomerToTextFields(currentCustomer);
-
+    defineInputsFieldsArray();
     assignListeners();
 
   }
 
 
 
+
+  private void defineInputsFieldsArray() {
+    inputNodes = new Node[]{customerNameTextField,houseNoTextField,houseNameTextField,streetTextField,postCodeTextField,emailTextField,mobileTextField,landLineTextField};;    
+  }
+
+
   private void assignListeners() {
     assignVocherAnchorPaneListener();
     assignCloseButtonListener();
     assignSaveOrUpdateListener();
+    assignValidationListeners();
 
   }
 
   
+  private void assignValidationListeners() {
+    FXUtilities.attachValidationListeners(currentCustomer, inputNodes);     
+
+  }
+
+
   private void assignSaveOrUpdateListener() {
 
     EventHandler eventHandler = new EventHandler() {
@@ -136,6 +151,7 @@ public class CustomerDetailsController extends AnchorPane {
   protected void saveOrUpdateCurrentCustomer() {
   
     try {
+      FXUtilities.inheritValuesFromControls(currentCustomer , inputNodes);
       currentCustomer = restaurantFacade.saveOrUpdate(currentCustomer);
     } catch (Exception ex) {
       ex.printStackTrace();
@@ -204,9 +220,9 @@ public class CustomerDetailsController extends AnchorPane {
 
   private void loadCustomerToTextFields(ResCustomer currentCustomer) {
     if (currentCustomer != null) {
-      userNameTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getCustomerName()));
+      customerNameTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getCustomerName()));
 
-      houseNumberTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getHouseNo()));
+      houseNoTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getHouseNo()));
 
       houseNameTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getHouseName()));
 
@@ -222,7 +238,7 @@ public class CustomerDetailsController extends AnchorPane {
             .getStateName()));
       }
 
-      postalCodeTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getPostCode()));
+      postCodeTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getPostCode()));
 
       if (Utils.isNotNull(currentCustomer.getResCountry())) {
         countryTextField.setText(Utils.getAbsoluteStringValue(currentCustomer.getResCountry()

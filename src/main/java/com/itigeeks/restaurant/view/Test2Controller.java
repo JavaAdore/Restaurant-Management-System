@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
 
 import com.itigeeks.restaurant.business.facade.RestaurantFacade;
 
-@Controller
+
 public class Test2Controller extends Pane {
 
   @Autowired

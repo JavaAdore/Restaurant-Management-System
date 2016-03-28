@@ -362,7 +362,7 @@ public class Utils {
   public static boolean isWrapperType(Class clazz) {
     Set<Class> WRAPPER_TYPES =
         new HashSet(Arrays.asList(Boolean.class, Character.class, Byte.class, Short.class,
-            Integer.class, Long.class, Float.class, Double.class, Void.class));
+            Integer.class, Long.class, Float.class, Double.class));
     return WRAPPER_TYPES.contains(clazz);
   }
 
@@ -620,6 +620,49 @@ public class Utils {
 
   }
 
+  public static String trim(String nodeId, String string) {
+
+    return nodeId.replace(string, "");
+  }
+
+  public static Object initiateObjectOfValue(Class<?> type, String val) {
+    if (isWrapperType(type)) {
+      return initiatePrimitiveObject(type, val);
+    }
+    if (type == String.class) {
+      return val;
+    } else {
+      return null;
+    }
+
+  }
 
 
+  public static boolean isNumericField(Field f) {
+    final Class<?>[] numerics =
+        new Class<?>[] {int.class, double.class, float.class, long.class, short.class, byte.class,
+            Integer.class, Double.class, Float.class, Long.class, Short.class, Byte.class};
+    try {
+      return Arrays.asList(numerics).contains(f.getType());
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return false;
+  }
+  
+  
+  public static boolean isDoubleValue(String number)
+  {
+    try
+    {
+      Double.parseDouble(number);
+      return true;
+    }catch(Exception ex)
+    {
+      return false;
+    }
+    
+  }
+  
+  
 }
