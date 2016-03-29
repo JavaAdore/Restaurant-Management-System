@@ -38,7 +38,7 @@ public class Lanucher extends Application {
   @Override
   public void start(Stage stage) throws Exception {
 	stage.getScene().getStylesheets().add("css/style.css");
-//    stage.setScene(new Scene(new CustomerListController()));
+    stage.setScene(new Scene(new CustomerListController()));
     
 //    stage.getScene().getStylesheets().add(this.getClass().getClassLoader().getResource("style.css").getPath());
     stage.show();
