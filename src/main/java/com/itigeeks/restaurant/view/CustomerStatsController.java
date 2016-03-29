@@ -34,7 +34,7 @@ import com.itigeeks.restaurant.view.utils.FXUtilities;
 import com.sun.javafx.scene.traversal.Direction;
 import com.sun.org.apache.xalan.internal.xsltc.dom.LoadDocument;
 
-public class CustomerVouchersController extends AnchorPane {
+public class CustomerStatsController extends AnchorPane {
 
   private RestaurantFacade restaurantFacade;
 
@@ -51,13 +51,12 @@ public class CustomerVouchersController extends AnchorPane {
   private Button nextPageButton;
   @FXML
   private Button previousPageButton;
-  
-  @FXML
-  private Label customerNameLabel;
 
   @FXML
   private AnchorPane closeAnchorPane;
 
+  @FXML
+  private Label customerNameLabel;
 
   @FXML
   private TableView vouchersDataTable;
@@ -74,13 +73,13 @@ public class CustomerVouchersController extends AnchorPane {
 
 
 
-  public CustomerVouchersController(ResCustomer regCustomer) {
+  public CustomerStatsController(ResCustomer regCustomer) {
     try {
       this.currentCustomer = regCustomer;
 
       restaurantFacade = BeanFactory.getBean(RestaurantFacade.class);
 
-      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CustomerVouchers.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewStats.fxml"));
 
       fxmlLoader.setRoot(this);
 
@@ -106,13 +105,12 @@ public class CustomerVouchersController extends AnchorPane {
 
 
   private void loadCurrentCustomerName() {
-    customerNameLabel.setText(currentCustomer.getCustomerName());    
+    customerNameLabel.setText(currentCustomer.getCustomerName());
   }
 
 
 
   private void initializeVoucherTableView() {
-   
     List<TableColumn> tableColumns =
         FXUtilities.generateTableColumn(ResVoucher.class, new String[] {"voucherNumber", "value",
             "validFrom", "validTill"});

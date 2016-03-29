@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:config.properties")
 public class Config {
 
-  @Value(value="${application.default.date.format}?: dd/mm/yyyy")
+  @Value(value="${application.default.date.format: dd/MM/yyyy}")
   private String defaultDateFormat;
   
   public String getDefaultDateFormat()
