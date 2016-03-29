@@ -104,8 +104,11 @@ public class LoginController extends AnchorPane {
         counter = 0;
         row++;
       }
+      
     }
-
+    usersGridPane.setHgap(10);
+    usersGridPane.setVgap(17);
+    
   }
 
   private void clearUsersGridPane() {

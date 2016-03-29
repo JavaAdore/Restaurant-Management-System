@@ -25,16 +25,16 @@ public class Test2Controller extends Pane {
 
   public Test2Controller() {
 
-    try {
-      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test2.fxml"));
-      fxmlLoader.setRoot(this);
-      fxmlLoader.setController(this);
-      fxmlLoader.load();
-    } catch (IOException exception) {
-      throw new RuntimeException(exception);
-    }
-
-    assignListeners();
+//    try {
+//      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test2.fxml"));
+//      fxmlLoader.setRoot(this);
+//      fxmlLoader.setController(this);
+//      fxmlLoader.load();
+//    } catch (IOException exception) {
+//      throw new RuntimeException(exception);
+//    }
+//
+//    assignListeners();
   }
 
   private void assignListeners() {

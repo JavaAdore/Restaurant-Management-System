@@ -1,0 +1,20 @@
+.backgroundImageOld {
+  -fx-background-image: url('../images/NibsPos_Login.jpg');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: 0px 0px;
+}
+
+.backgroundImage {
+  -fx-background-image: url("../images/NibsPos_Login.jpg") no-repeat center center fixed; 
+  -fx-background-size: cover;
+}
+
+.usernameInput {
+  -fx-background-image: url('../images/NibsPos_Login.jpg');
+  -fx-background-position: 533px 630px;
+}
+
+.loginButton {
+  -fx-background-image: url('../images/NibsPos_Login.jpg');
+  -fx-background-position: 283px 630px;
+}
